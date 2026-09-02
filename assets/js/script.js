@@ -1173,7 +1173,6 @@
 	
 	$(window).on('load', function() {
 		handlePreloader();
-		enableMasonry();
 	});	
 
 })(window.jQuery);
