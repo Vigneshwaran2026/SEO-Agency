@@ -1,0 +1,84 @@
+/* Moxes SEO  & Digital Marketing Agency HTML-5 Template */
+
+/*** 
+
+====================================================================
+	Video One
+====================================================================
+
+***/
+
+.video-one{
+	position:relative;
+	padding:170px 0px 170px;
+}
+
+.video-one .column{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.video-one_bg{
+	position:absolute;
+	left:25px;
+	top:0px;
+	right:25px;
+	bottom:0px;
+	overflow:hidden;
+	border-radius: 25px;
+	background-attachment:fixed;
+	background-size:cover;
+}
+
+.video-one .content{
+	position:relative;
+	margin-top:50px;
+	padding:40px 40px;
+	border-radius: 25px;
+	background-color:rgba(var(--black-color-rgb), 0.60);
+}
+
+.video-one .content h4{
+	position:relative;
+	color:var(--white-color);
+}
+
+.video-one .content .text{
+	position:relative;
+	margin-top:10px;
+	opacity:0.70;
+	color:var(--white-color);
+}
+
+.video-one .content .graph{
+	position:absolute;
+	right:40px;
+	bottom:0px;
+}
+
+/* Play Box */
+
+.video-one_play .play-box{
+	position:relative;
+}
+
+.video-one_play .play-box:hover .fa{
+	color: var(--white-color);
+	border-color: var(--black-color);
+	background-color: var(--main-color);
+}
+
+.video-one_play .play-box .fa{
+	position:relative;
+	width:120px;
+	height:120px;
+	margin:0 auto;
+	font-size:30px;
+	display:block;
+	margin-top:170px;
+	line-height:120px;
+	border-radius:150px;
+	color:var(--white-color);
+	text-align:center !important;
+	background-color: var(--main-color);
+}

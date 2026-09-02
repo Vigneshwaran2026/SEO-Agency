@@ -1,0 +1,207 @@
+/* Moxes SEO  & Digital Marketing Agency HTML-5 Template */
+
+/*** 
+
+====================================================================
+	Marketing One
+====================================================================
+
+***/
+
+.marketing-one{
+	position: relative;
+	z-index: 1;
+	padding-bottom:30px;
+}
+
+.marketing-one .outer-container{
+	position:relative;
+	margin-left:15px;
+	margin-right:15px;
+}
+
+.marketing-one .animation_mode{
+	position:relative;
+	min-height:80px;
+	overflow:hidden;
+	border-radius:25px;
+	margin-left: -10px;
+	background-color:var(--main-color);
+}
+
+.marketing-one .animation_mode h1{
+	font-weight:800;
+	font-size: 40px;
+	line-height: 1em;
+	padding: 20px 0px 6px;
+	display: inline-block;
+	text-transform: uppercase;
+	color: var(--black-color);
+}
+
+.marketing-one .animation_mode h1.light{
+	color: transparent;
+	font-weight: 800;
+	opacity:0.70;
+	-webkit-text-stroke-width: 2px;
+	font-family: "Raleway", serif;
+	-webkit-text-stroke-color: rgba(var(--black-color-rgb), 1);
+}
+
+.marketing-one .animation_mode .marketing-one_icon{
+	position: relative;
+	top: -7px;
+	font-size:22px;
+	line-height: 1em;
+	margin: 0px 15px;
+	color: var(--black-color);
+}
+
+/*** 
+
+====================================================================
+	Marketing Two
+====================================================================
+
+***/
+
+.marketing-two{
+	position: relative;
+	z-index: 1;
+	padding-bottom:80px;
+}
+
+.marketing-two .outer-container{
+	position:relative;
+	margin-left:15px;
+	margin-right:15px;
+}
+
+.marketing-two .animation_mode{
+	position:relative;
+	min-height:80px;
+	overflow:hidden;
+}
+
+.marketing-two .animation_mode h1{
+	font-weight:800;
+	font-size: 120px;
+	line-height: 1em;
+	padding: 20px 0px 6px;
+	display: inline-block;
+	text-transform: uppercase;
+	color: var(--main-color);
+}
+
+.marketing-two .animation_mode h1.light{
+	color: transparent;
+	font-weight: 800;
+	opacity:0.70;
+	-webkit-text-stroke-width: 2px;
+	font-family: "Raleway", serif;
+	-webkit-text-stroke-color: rgba(var(--black-color-rgb), 1);
+}
+
+.marketing-two .animation_mode .marketing-one_icon{
+	position: relative;
+	top: 10px;
+	font-size:22px;
+	line-height: 1em;
+	margin: 0px 25px;
+	overflow:hidden;
+	display:inline-block;
+	border-radius: 150px;
+}
+
+/*** 
+
+====================================================================
+	Marketing Three
+====================================================================
+
+***/
+
+.marketing-three{
+	position: relative;
+	z-index: 1;
+	overflow:hidden;
+	padding:90px 0px 0px;
+}
+
+.marketing-three .animation_mode{
+	position:relative;
+	min-height:100px;
+	margin-left: -10px;
+	transform: rotate(5deg);
+	background-color: var(--main-color);
+}
+
+.marketing-three .animation_mode::before{
+	position: absolute;
+	content: '';
+	left: 0px;
+	top: 8px;
+	right: 0px;
+	bottom: 8px;
+	background-color: var(--white-color);
+	border-top: 2px solid var(--black-color);
+	border-bottom: 2px solid var(--black-color);
+}
+
+.marketing-three .animation_mode h1{
+	font-size: 60px;
+	line-height: 1em;
+	padding: 20px 0px 6px;
+	display: inline-block;
+	text-transform: uppercase;
+	color: var(--black-color);
+}
+
+.marketing-three .animation_mode .marketing-three_icon{
+	position: relative;
+	top: -5px;
+	line-height: 1em;
+	margin: 0px 15px;
+	font-size: 30px;
+	color: var(--main-color);
+	font-family: "flaticon_moxes";
+}
+
+.marketing-three .animation_mode-two{
+	position:relative;
+	min-height:100px;
+	top: -90px;
+	margin-left: -10px;
+	transform: rotate(-5deg);
+	background-color: var(--black-color);
+}
+
+.marketing-three .animation_mode-two::before{
+	position: absolute;
+	content: '';
+	left: 0px;
+	top: 8px;
+	right: 0px;
+	bottom: 8px;
+	border-top: 2px solid rgba(var(--white-color-rgb), 0.20);
+	border-bottom: 2px solid rgba(var(--white-color-rgb), 0.20);
+}
+
+.marketing-three .animation_mode-two h1{
+	font-size: 60px;
+	line-height: 1em;
+	padding: 20px 0px 6px;
+	display: inline-block;
+	text-transform: uppercase;
+	color: var(--white-color);
+}
+
+.marketing-three .animation_mode-two .marketing-three_icon{
+	position: relative;
+	top: -5px;
+	line-height: 1em;
+	margin: 0px 15px;
+	font-size: 30px;
+	color: var(--white-color);
+	font-family: "flaticon_moxes";
+}

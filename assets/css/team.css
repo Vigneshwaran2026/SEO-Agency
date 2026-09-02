@@ -1,0 +1,658 @@
+/* Moxes SEO  & Digital Marketing Agency HTML-5 Template */
+
+/*** 
+
+====================================================================
+	Team One
+====================================================================
+
+***/
+
+.team-one{
+	position: relative;
+	overflow:hidden;
+	padding: 120px 0px 220px;
+}
+
+.team-one .side-title{
+	position:absolute;
+	right:60px;
+	top:0px;
+	line-height:1em;
+	font-size: 128px;
+	transform:rotate(-90deg);
+	text-transform:uppercase;
+	
+	color: transparent;
+	font-weight: 800;
+	-webkit-text-stroke-width: 2px;
+	font-family: "Raleway", serif;
+	transform-origin: 98% 80%;
+	-webkit-text-stroke-color: rgba(var(--black-color-rgb), 0.10);
+}
+
+.team-one .info-outer{
+	position:relative;
+	margin-top: 40px;
+	border-radius: 150px;
+	padding:12px 25px 12px 15px;
+	border:1px solid rgba(var(--black-color-rgb), 0.10);
+}
+
+.team-one .info-outer a{
+	position:relative;
+	font-size: 16px;
+	color:var(--black-color);
+}
+
+.team-one .info-outer i{
+	position:relative;
+	width:37px;
+	height:37px;
+	font-size: 14px;
+	line-height:37px;
+	border-radius: 50px;
+	text-align: center;
+	margin-right: 10px;
+	display:inline-block;
+	color:var(--black-color);
+	background-color:var(--main-color);
+}
+
+.team-one_shadow{
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.team-one_title{
+	position: relative;
+	padding-left: 120px;
+	margin-bottom: 35px;
+	padding-bottom: 35px;
+	border-bottom:1px solid #DDDDDD;
+}
+
+.team-one_arrow{
+	position:absolute;
+	right:30px;
+	width:70px;
+	height:70px;
+	border-radius:50px;
+	line-height:70px;
+	text-align:center;
+	display:inline-block;
+	background-color:#EEEEEE;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+
+.team-one_title:hover .team-one_arrow{
+	color:var(--white-color);
+	background-color: var(--black-color);
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-one_title.active .team-one_arrow img,
+.team-one_title:hover .team-one_arrow img{
+	fill:#ffffff;
+	filter: brightness(200%);
+	color:var(--white-color);
+}
+
+.team-one_title:last-child{
+	margin-bottom: 0px;
+}
+
+.team-one_icon-outer{
+	position:absolute;
+	left:0px;
+	top:10px;
+}
+
+.team-one_icon{
+	position:relative;
+	width:70px;
+	height:70px;
+	line-height:66px;
+	text-align:center;
+	border-radius:50px;
+	display:inline-block;
+	border:1px solid #999999;
+}
+
+.team-one_icon:before{
+	position:absolute;
+	content:'';
+	left:0px;
+	top:0px;
+	right:5px;
+	bottom:5px;
+	border-radius:50px;
+	border:1px solid #DDDDDD;
+}
+
+.team-one_number{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width:23px;
+	height:23px;
+	z-index:1;
+	font-size:12px;
+	line-height:23px;
+	font-weight:700;
+	text-align:center;
+	border-radius:50px;
+	color: var(--black-color);
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	background-color:#D9D9D9;
+}
+
+.team-one_title.active .team-one_number,
+.team-one_title:hover .team-one_number{
+	color:var(--white-color);
+	background-color: var(--black-color);
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-one_heading{
+	margin-top: 10px; 
+	color: var(--black-color);
+	text-transform: capitalize;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	font-family: 'Manrope', sans-serif;
+}
+
+.team-one_heading span{
+	font-weight:400;
+	font-size:16px;
+	text-transform:uppercase;
+}
+.team-one_heading a{
+	position: relative;
+	color: var(--black-color);
+}
+
+.team-one_title.active .team-one_arrow,
+.team-one_title:hover .team-one_arrow{
+	color: var(--white-color);
+    background-color: var(--black-color);
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.team-one_title.active .team-one_heading a,
+.team-one_title:hover .team-one_heading a{
+	color: var(--main-color);
+}
+
+.team-one_tags{
+	position: relative;
+	margin-top:15px;
+}
+
+.team-one_tags li{
+	position: relative;
+	margin-right:8px;
+	display:inline-block;
+}
+
+.team-one_tags li a{
+	position: relative;
+	font-size:12px;
+	color:#666666;
+	font-weight:600;
+	padding:6px 14px;
+	border-radius:50px;
+	display:inline-block;
+	border:1px solid #999999;
+}
+
+.team-one_tags li a:hover{
+	color:var(--white-color);
+	border-color:var(--main-color);
+	background-color:var(--main-color);
+}
+
+.team-one_image-column{
+	position: relative;
+}
+
+.team-one_image-outer{
+	position: relative;
+	height: 100%;
+}
+
+.team-one_images_outer{
+	position: relative;
+	height: 100%;
+}
+
+.team-one_title.active .team-one_subtitle,
+.team-one_title:hover .team-one_subtitle{
+	background-color: var(--color-two);
+}
+
+.team-one_image{
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	opacity: 0;
+	overflow:hidden;
+	border-radius:30px;
+	display: inline-block;
+	text-align: center;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-webkit-transform: rotate(-5deg) translateX(0px);
+    transform: rotate(-5deg) translateX(0px);
+}
+
+.team-one_image .social-outer{
+	position:absolute;
+	left:0px;
+	right:0px;
+	bottom:15px;
+	z-index: 2;
+	text-align:center;
+}
+
+.team-one_image .social-outer .social-box{
+	position:relative;
+	padding: 12px 30px;
+	display:inline-block;
+	border-radius:50px 50px;
+	background-color:var(--white-color);
+}
+
+.team-one_image .social-outer .social-box a{
+	position:relative;
+	width:34px;
+	height:34px;
+	margin:0px 2px;
+	font-size: 14px;
+	line-height:32px;
+	border-radius: 50px;
+	display:inline-block;
+	color:var(--black-color);
+	border:1px solid var(--black-color);
+}
+
+.team-one_image .social-outer .social-box a:hover{
+	border-color:var(--main-color);
+	background-color:var(--main-color);
+}
+
+.team-one_image.active{
+	z-index:1;
+	opacity: 1;
+	-webkit-transform: rotate(0deg) translateX(0px);
+    transform: rotate(0deg) translateX(0px);
+}
+
+.team-one_content-column{
+	position:relative;
+}
+
+.team-one_content-outer{
+	position:relative;
+	padding-left:20px;
+}
+
+/*** 
+
+====================================================================
+	Team Two
+====================================================================
+
+***/
+
+.team-two{
+	position: relative;
+	overflow:hidden;
+	padding: 120px 0px 90px;
+}
+
+.team-two .sec-title{
+	display:inline-block;
+}
+
+.team-two .three-item_carousel{
+	padding-top:150px;
+	margin-top: -150px;
+}
+
+.team-two_arrow{
+	position:absolute;
+	right:0px;
+	top:0px;
+	z-index:10;
+}
+
+.team-two_arrow .three-item_carousel-prev,
+.team-two_arrow .three-item_carousel-next{
+	position:relative;
+	width:65px;
+	height:65px;
+	font-size:22px;
+	margin-left:5px;
+	text-align:center;
+	line-height:65px;
+	border-radius:50px;
+	display:inline-block;
+	color:var(--white-color);
+	background-color:var(--black-color);
+}
+
+.team-two_arrow .three-item_carousel-prev:hover,
+.team-two_arrow .three-item_carousel-next:hover{
+	color:var(--black-color);
+	background-color:var(--main-color);
+}
+
+.team-block_one{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.team-block_one-inner{
+	position:relative;
+}
+
+.team-block_one-image{
+	position:relative;
+	overflow:hidden;
+	z-index:1;
+	border-radius:250px 250px 25px 25px;
+}
+
+.team-block_one-image img{
+	position:relative;
+	width:100%;
+	display:block;
+}
+
+.team-block_one .share-box{
+	position:absolute;
+	right:35px;
+	bottom:0px;
+	z-index:1;
+}
+
+.team-block_one-inner:hover .social-box{
+	bottom: 105%;
+	opacity:1;
+}
+
+.team-block_one .social-box{
+	position:absolute;
+	bottom: -130%;
+	left:5px;
+	opacity:0;
+}
+
+.team-block_one .social-box a{
+	position:relative;
+	width:40px;
+	height:40px;
+	margin:3px 0px;
+	font-size: 16px;
+	text-align:center;
+	line-height: 40px;
+	border-radius: 50px;
+	display: inline-block;
+	color:var(--black-color);
+	background-color:var(--white-color);
+}
+
+.team-block_one .social-box a:hover{
+	color:var(--white-color);
+	background-color:var(--main-color);
+}
+
+.team-block_one .share-box .share:after{
+	position:absolute;
+	content:'';
+	left:-28px;
+	bottom:0px;
+	width:99px;
+	height:55px;
+	z-index:-1;
+	background:url(../images/icons/team-vector.png) no-repeat;
+}
+	
+.team-block_one .share-box .share{
+	position:relative;
+	width:50px;
+	height:50px;
+	font-size: 20px;
+	line-height: 50px;
+	text-align:center;
+	border-radius:50px;
+	display:inline-block;
+	color:var(--main-color);
+	background-color:var(--black-color);
+}
+
+.team-block_one-content{
+	position:relative;
+	padding:35px 30px 30px;
+}
+
+.team-block_one-content:before{
+	position:absolute;
+	content:'';
+	left:0px;
+	top:-50px;
+	right:0px;
+	bottom:0px;
+	border-radius:0px 0px 80px 25px;
+	border: 1px solid rgba(var(--black-color-rgb), 0.10);
+}
+
+.team-block_one-designation{
+	position:relative;
+	font-size: 18px;
+	font-weight:600;
+	color:var(--black-color);
+	text-transform:uppercase;
+}
+
+.team-block_one-title{
+	position:relative;
+	margin-top:10px;
+}
+
+.team-block_one-title a{
+	position:relative;
+	color:var(--black-color);
+}
+
+.team-block_one-title a:hover{
+	color:var(--main-color);
+}
+
+
+
+
+
+
+
+/*** 
+
+====================================================================
+	Team Detail
+====================================================================
+
+***/
+
+.team-detail{
+	position:relative;
+	padding:130px 0px 100px;
+	background-color:var(--color-fourty);
+}
+
+.team-detail_image-column{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.team-detail_image{
+	position:relative;
+	padding-right:10px;
+}
+
+.team-detail_image img{
+	position:relative;
+	width:100%;
+	display:block;
+}
+
+.team-detail_content-column{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.team-detail_content{
+	position:relative;
+	padding-left:40px;
+}
+
+.team-detail_title{
+	position:relative;
+	font-size:32px;
+	font-weight:600;
+	color:var(--black-color);
+}
+
+.team-detail_designation{
+	position:relative;
+	font-size:16px;
+	margin-top:10px;
+	color:var(--main-color);
+}
+
+.team-detail_text{
+	position:relative;
+	font-size:18px;
+	opacity: 0.80;
+	line-height:30px;
+	margin:25px 0px 30px;
+	color:var(--black-color);
+}
+
+.team-detail_contact{
+	position:relative;
+	padding:17px 20px;
+	border-radius:6px;
+	background-color:var(--white-color);
+	border:1px solid rgba(var(--black-color-rgb), 0.08);
+}
+
+.team-detail .info-box{
+	position:relative;
+	padding-left:75px;
+	font-size:16px;
+	font-weight:500;
+	line-height:26px;
+	margin-top:10px;
+	color:rgba(var(--black-color-rgb), 0.60);
+}
+
+.team-detail .info-box .icon{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:60px;
+	height:60px;
+	font-size:22px;
+	line-height:60px;
+	text-align:center;
+	border-radius:150px;
+	display:inline-block;
+	color:var(--white-color);
+	background-color:var(--main-color);
+}
+
+.team-detail .info-box strong{
+	position:relative;
+	display:block;
+	font-size:20px;
+	font-weight:600;
+	margin-bottom:8px;
+	color:var(--black-color);
+}
+
+.team-detail .info-box a{
+	position:relative;
+	font-weight:500;
+	font-size: 16px;
+	margin-bottom:2px;
+	display:inline-block;
+	color:rgba(var(--black-color-rgb), 0.70);
+}
+
+.team-detail .social-box{
+	position:relative;
+	margin-top:40px;
+}
+
+.team-detail .social-box span{
+	position:relative;
+	font-size:18px;
+	font-weight:600;
+	margin-right:15px;
+	color:var(--black-color);
+}
+
+.team-detail .social-box a{
+	position:relative;
+	width:44px;
+	height:44px;
+	font-size:16px;
+	line-height:44px;
+	margin-right:5px;
+	border-radius:3px;
+	text-align:center;
+	display:inline-block;
+	background-color:var(--main-color);
+	color:rgba(var(--white-color-rgb), 1);
+}
+
+.team-detail .social-box a:hover{
+	color:var(--white-color);
+	background-color:var(--black-color);
+}
+
+.team-detail .emergenc-box{
+	position:relative;
+	padding: 20px 30px;
+	font-size:20px;
+	font-weight:500;
+	margin-top:30px;
+	color:var(--white-color);
+	background-color:var(--main-color);
+}
+
+.team-detail .emergenc-box a{
+	position:relative;
+	margin-left:50px;
+	display:inline-block;
+	color:var(--white-color);
+}
+
+.team-detail .emergenc-box a i{
+	position:relative;
+	font-size:18px;
+	top:2px;
+}

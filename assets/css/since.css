@@ -1,0 +1,93 @@
+/* Moxes SEO  & Digital Marketing Agency HTML-5 Template */
+
+/*** 
+
+====================================================================
+	Since One
+====================================================================
+
+***/
+
+.since-one{
+	position:relative;
+	padding-bottom:120px;
+}
+
+.since-one .sec-title{
+	position:relative;
+	margin-bottom:0px;
+	padding-bottom:40px;
+}
+
+.since-one .inner-container{
+	position:relative;
+}
+
+.counter-block_one{
+	position:relative;
+}
+
+.counter-block_one-inner{
+	position:relative;
+	padding-left:55px;
+	padding-right: 25px;
+	border-left: 1px solid rgba(var(--black-color-rgb), 0.10);
+}
+
+.counter-block_one-count{
+	position:relative;
+	font-size:64px;
+	font-weight:800;
+	line-height:1em;
+	color:var(--black-color);
+}
+
+.counter-block_one-text{
+	position:relative;
+	font-size:16px;
+	font-weight:400;
+	line-height:28px;
+	color: #666666;
+}
+
+
+.since-phone_box-outer{
+	position:relative;
+	padding:60px 40px;
+	border-radius: 0px 0px 30px 0px;
+	background-color:var(--main-color);
+}
+
+.since-phone_box{
+	position:relative;
+	font-size:18px;
+	font-weight:700;
+	padding-left: 70px;
+	color:var(--black-color);
+}
+
+.since-phone_box .icon{
+	position:absolute;
+	left: 0px;
+	top: 7px;
+	font-size: 44px;
+	line-height:1em;
+	color:var(--black-color);
+}
+
+.since-phone_box a{
+	position:relative;
+	color:var(--black-color);
+}
+
+.since-phone_box a:hover{
+	color:var(--white-color);
+}
+
+.since-phone_box i{
+	position:relative;
+	display:block;
+	font-size: 15px;
+	font-weight: 500;
+	margin-bottom:10px;
+}

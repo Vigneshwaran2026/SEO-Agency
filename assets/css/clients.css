@@ -1,0 +1,183 @@
+
+.clients-one{
+	position:relative;
+}
+
+.clients-one .auto-container{
+	position:relative;
+	max-width:1830px;
+}
+
+.clients-one .inner-container{
+	position:relative;
+}
+
+.clients-one .client-image{
+	position:relative;
+	text-align:center;
+	border-radius: 15px;
+	border:2px solid #DDDDDD;
+}
+
+.clients-one .client-image img{
+	position:relative;
+	margin:0 auto;
+	filter: grayscale(100%) brightness(0);
+	display:inline-block;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+
+.clients-one .client-image img:hover{
+	filter: grayscale(0%);
+}
+
+/*** 
+
+====================================================================
+	Clients Two
+====================================================================
+
+***/
+
+.clients-two{
+	position:relative;
+	padding: 90px 0px 100px;
+}
+
+.clients-two .inner-container{
+	position:relative;
+}
+
+.clients-two .client-image{
+	position:relative;
+	text-align:center;
+	margin-bottom:30px;
+	border-radius: 15px;
+	border:2px solid #DDDDDD;
+	background-color:var(--color-two);
+}
+
+.clients-two .client-image img{
+	position:relative;
+	margin:0 auto;
+	filter: grayscale(100%) brightness(0);
+	display:inline-block;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+
+.clients-two .client-image img:hover{
+	filter: grayscale(0%);
+}
+
+/*** 
+
+====================================================================
+	Clients Three
+====================================================================
+
+***/
+
+.clients-three{
+	position:relative;
+	padding: 0px 0px 100px;
+}
+
+.clients-three .inner-container{
+	position:relative;
+}
+
+.clients-three .client-image{
+	position:relative;
+	text-align:center;
+	margin-bottom:30px;
+	border-radius: 15px;
+	border:2px solid #DDDDDD;
+}
+
+.clients-three .client-image img{
+	position:relative;
+	margin:0 auto;
+	filter: grayscale(100%) brightness(0);
+	display:inline-block;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+
+.clients-three .client-image img:hover{
+	filter: grayscale(0%);
+}
+
+/*** 
+
+====================================================================
+	Clients Four
+====================================================================
+
+***/
+
+.clients-four{
+	position:relative;
+	padding-bottom:100px;
+}
+
+.clients-four.style-two{
+	padding-top:100px;
+}
+
+.clients-four .inner-container{
+	position:relative;
+	display:flex;
+	gap:30px;
+	flex-wrap:wrap;
+	justify-content: center;
+}
+
+.clients-four .client-block_one{
+	position:relative;
+	width:18%;
+}
+
+.client-block_one{
+	position:relative;
+	margin-bottom:25px;
+}
+
+.client-block_one-inner{
+	position:relative;
+	overflow:hidden;
+	text-align:center;
+	padding:55px 30px;
+	border-radius:15px;
+	background-position:right top;
+	background-repeat:no-repeat;
+	background-color:var(--black-color);
+}
+
+.client-block_one-shadow{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:107px;
+	height:114px;
+	background-position:left bottom;
+	background-repeat:no-repeat;
+}
+
+.client-block_one .text{
+	position:relative;
+	margin-top:30px;
+	font-size:16px;
+	line-height:30px;
+	color:var(--white-color);
+}

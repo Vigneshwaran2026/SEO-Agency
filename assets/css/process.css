@@ -1,0 +1,221 @@
+/* Moxes SEO  & Digital Marketing Agency HTML-5 Template */
+
+/*** 
+
+====================================================================
+	Process One
+====================================================================
+
+***/
+
+.process-one{
+	position:relative;
+	padding:120px 0px 120px;
+}
+
+.process-one .lower-box{
+	position:relative;
+	margin-top: 30px;
+}
+
+.process-one .lower-box .text{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.process-one_shadow{
+	background-position:center center;
+	background-position: no-repeat;
+}
+
+.process-block_one{
+	position:relative;
+	margin-bottom: 30px;
+}
+
+.process-block_one-shadow{
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.process-block_one-inner{
+	position:relative;
+	overflow: hidden;
+	padding: 40px 30px;
+	border-radius: 30px;
+	background-color:var(--white-color);
+	box-shadow: 0px 10px 10px rgba(0,0,0,0.10);
+}
+
+.process-block_one-number{
+	position:relative;
+	width:50px;
+	height:50px;
+	font-size:18px;
+	line-height:50px;
+	text-align:center;
+	border-radius:50px;
+	display:inline-block;
+	color:var(--white-color);
+	background-color:var(--black-color);
+}
+
+.process-block_one-title{
+	position:relative;
+	font-weight:500;
+	margin: 25px 0px 20px;
+}
+
+.process-block_one-title a{
+	position:relative;
+	color:var(--black-color);
+}
+
+.process-block_one-title a:hover{
+	color:var(--main-color);
+}
+
+.process-block_one-text{
+	position:relative;
+	font-size: 18px;
+	line-height: 30px;
+	margin-bottom: 25px;
+	color:var(--black-color);
+}
+
+.process-block_one-more{
+	position:relative;
+	width:50px;
+	height:50px;
+	font-size:18px;
+	line-height:50px;
+	text-align:center;
+	border-radius:50px;
+	display:inline-block;
+	color:var(--black-color);
+	transform: rotate(-45deg);
+	background-color:var(--main-color);
+}
+
+.process-block_one-inner:hover .process-block_one-number{
+	transform: rotateY(360deg);
+	color:var(--black-color);
+	background-color:var(--main-color);
+}
+
+.process-block_one-inner:hover .process-block_one-more{
+	transform: rotate(0deg);
+	color:var(--white-color);
+	background-color:var(--black-color);
+}
+
+/*** 
+
+====================================================================
+	Process Two
+====================================================================
+
+***/
+
+.process-two{
+	position:relative;
+	padding:120px 0px 90px;
+}
+
+.process-two_title-column{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.process-two_title-outer{
+	position:relative;
+}
+
+.process-two_image{
+	position:relative;
+	overflow:hidden;
+	border-radius:20px;
+	margin-bottom:45px;
+}
+
+.process-two_image img{
+	position:relative;
+	width:100%;
+	display:block;
+}
+
+
+.process-two_content-column{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.process-two_content-outer{
+	position:relative;
+}
+
+/* Process Block One */
+
+.process-block_two{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.process-block_two-inner{
+	position:relative;
+	padding:40px 30px;
+	border-radius:15px;
+	background-color:#f5f5f5;
+	box-shadow:0px 0px 30px rgba(255,255,255,0.50) inset;
+}
+
+.process-block_two-inner:before{
+	position:absolute;
+	content:'';
+	left:62px;
+	top:0px;
+	bottom:0px;
+	width:6px;
+	opacity: 0.20;
+	background-color:var(--black-color);
+}
+
+.process-block_two-inner:hover .process-block_two-number{
+	transform:rotateY(360deg);
+	color:var(--white-color);
+	background-color:var(--black-color);
+}
+
+.process-block_two-content{
+	position:relative;
+	padding-left:100px;
+}
+
+.process-block_two-number{
+	position:absolute;
+	left:0px;
+	top:15px;
+	width:70px;
+	height:70px;
+	font-size:22px;
+	line-height:70px;
+	font-weight:700;
+	text-align:center;
+	border-radius:50px;
+	display:inline-block;
+	color:var(--white-color);
+	background-color:var(--main-color);
+	box-shadow:0px 0px 30px rgba(0,0,0,0.40) inset;
+}
+
+.process-block_two-title{
+	position:relative;
+	font-weight:500;
+}
+
+.process-block_two-text{
+	position:relative;
+	margin-top:10px;
+	font-size:16px;
+	line-height:28px;
+}

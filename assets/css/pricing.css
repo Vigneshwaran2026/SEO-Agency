@@ -1,0 +1,250 @@
+/* Moxes SEO  & Digital Marketing Agency HTML-5 Template */
+
+/*** 
+
+====================================================================
+	Pricing One
+====================================================================
+
+***/
+
+.pricing-one{
+	position:relative;
+	padding:120px 0px 120px;
+}
+
+.pricing-one.style-two{
+	margin-top:110px;
+	margin-bottom:110px;
+}
+
+.pricing-one_bg{
+	position: absolute;
+    left: 25px;
+    top: 0px;
+    right: 25px;
+    bottom: 0px;
+    overflow: hidden;
+    border-radius: 35px;
+    background-color: var(--black-color);
+}
+
+.pricing-tabs {
+	position: relative;
+}
+
+.pricing-tabs .title-column {
+	position: relative;
+	text-align: center;
+	margin-bottom: 70px;
+}
+
+.pricing-tabs .tab-buttons {
+	position: relative;
+	text-align: center;
+	display: inline-block;
+}
+
+.pricing-tabs .tab-buttons .tab-btn {
+	position: relative;
+	float: left;
+	margin: 0 20px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 47px;
+	text-transform:uppercase;
+	color: var(--white-color);
+	transition: all 300ms ease;
+}
+
+.pricing-tabs .tab-buttons .tab-btn:hover, .pricing-tabs .tab-buttons .tab-btn.active-btn {
+	color: var(--main-color);
+}
+
+.pricing-tabs .tab-buttons .boll {
+	position: relative;
+	width: 92px;
+	height: 45px;
+	padding: 8px 8px;
+	border-radius: 50px;
+	text-align: left;
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+	background-color: var(--white-color);
+}
+
+.pricing-tabs .tab-buttons .boll .round {
+	position: relative;
+	width: 30px;
+	height: 29px;
+	border-radius: 50px;
+	display: inline-block;
+	background-color: var(--black-color);
+	transition: all 300ms ease;
+}
+
+.pricing-tabs .tab-buttons .boll .round.boll-right {
+	transform: translateX(45px);
+}
+
+.pricing-tabs .tabs-content .tab {
+	position: relative;
+	display: none;
+	transition: all 600ms ease;
+	transform: translateY(60px);
+}
+
+.pricing-tabs .tabs-content .tab.active-tab {
+	display: block;
+	transform: translateY(0px);
+}
+
+.pricing-tabs .tabs-content .tab .content .guarantee {
+	position: relative;
+	text-align: center;
+	color: #373a5b;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.pricing-tabs .tabs-content .tab .content .guarantee .circle {
+	position: relative;
+	width: 18px;
+	height: 18px;
+	top: 3px;
+	margin-right: 10px;
+	display: inline-block;
+	border-radius: 50px;
+	border: 2px solid #2bb852;
+}
+
+.pricing-tabs .tabs-content .tab .content .guarantee .circle:before {
+	position: absolute;
+	content: "";
+	left: 5px;
+	top: 5px;
+	width: 4px;
+	height: 4px;
+	border-radius: 50px;
+	background-color: #2bb852;
+}
+
+.pricing-one_list{
+	position:relative;
+	display:flex;
+	gap: 60px;
+	flex-wrap: wrap;
+	margin-bottom:30px;
+	align-items: center;
+	justify-content:center;
+}
+
+.pricing-one_list li{
+	position:relative;
+	font-size:16px;
+	margin-bottom:12px;
+	color: var(--white-color);
+}
+
+.pricing-one_list li i{
+	position:relative;
+	margin-right: 15px;
+	color: var(--white-color);
+}
+
+.price-block_one{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.price-block_one-inner{
+	position:relative;
+	padding: 45px 40px;
+	border-radius: 25px;
+	background-color:#0a0b0f;
+	background-size:cover;
+}
+
+.price-block_one-inner:before{
+	position:absolute;
+	content:'';
+	left:15px;
+	top:15px;
+	right:15px;
+	bottom:15px;
+	border-radius: 25px;
+	border: 1px solid rgba(var(--white-color-rgb), 0.10);
+}
+
+.price-block_one-icon{
+	position:relative;
+	font-size: 90px;
+	line-height:1em;
+	color: var(--white-color);
+	font-family: "flaticon_moxes";
+}
+
+.price-block_one-price{
+	position:relative;
+	font-size: 80px;
+	line-height:1em;
+	font-weight:700;
+	color: var(--white-color);
+}
+
+.price-block_one-price span{
+	position:relative;
+	display:block;
+	font-size:20px;
+	line-height:1em;
+	font-weight:500;
+	text-align:right;
+	margin-top: 10px;
+}
+
+.price-block_one-title{
+	position:relative;
+	margin-top: 35px;
+	text-transform:capitalize;
+	color: var(--white-color);
+}
+
+.price-block_one-text{
+	position:relative;
+	margin-top: 10px;
+	font-size:16px;
+	margin-bottom: 40px;
+	text-transform:capitalize;
+	color: var(--white-color);
+}
+
+.price-block_one-list{
+	position:relative;
+	margin-bottom: 50px;
+}
+
+.price-block_one-list li{
+	position:relative;
+	font-size:16px;
+	margin-bottom:18px;
+	padding-left: 30px;
+	color: var(--white-color);
+}
+
+.price-block_one-list li:before{
+	position:absolute;
+	content: '';
+	left:0px;
+	top:6px;
+	width:12px;
+	height:12px;
+	border-radius: 50px;
+	display:inline-block;
+	border:1px solid var(--white-color);
+	outline: 3px solid var(--main-color);
+	outline-offset: -7px;
+}
+
+.price-block_one-list li:last-child{
+	margin-bottom:0px;
+}

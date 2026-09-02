@@ -1,0 +1,183 @@
+.faq-one{
+	position:relative;
+	padding:120px 0px 95px;
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.faq-one .column{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.faq-one_bg{
+	position:absolute;
+	left:25px;
+	top:0px;
+	right:25px;
+	bottom:0px;
+	overflow:hidden;
+	border-radius: 35px;
+	background-color:var(--black-color);
+}
+
+.faq-one_star{
+	position:absolute;
+	right:100px;
+	bottom:100px;
+	width:121px;
+	height:121px;
+	background-repeat:no-repeat;
+}
+
+.faq-one_circle {
+	position: relative;
+	width: 220px;
+	height: 220px;
+	margin-top: 120px;
+}
+
+.faq-one_circle span {
+	display: inline-block;
+	width: 220px;
+	height: 220px;
+	color:var(--white-color);
+}
+
+.faq-one_circle svg.circle-text {
+	width: 100%;
+	height: 100%;
+}
+
+.faq-one_circle text.circle-text-content {
+	fill: #ffffff;
+	font-size: 18px;
+}
+
+.faq-one_circle:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	width: 220px;
+	height: 220px;
+	background: url(../images/icons/icon-1.png) center center no-repeat;
+}
+
+.faq-one_arrow{
+	position:absolute;
+	left:130%;
+	top: 20px;
+	width: 112px;
+	height: 100px;
+	background-repeat:no-repeat;
+	-webkit-animation: icon-bounce 0.8s ease-out infinite;
+    animation: icon-bounce 0.8s ease-out infinite;
+}
+
+/*** 
+
+====================================================================
+	Faq Two
+====================================================================
+
+***/
+
+.faq-two{
+	position:relative;
+	padding:30px 0px 95px;
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.faq-two.style-two{
+	padding-top:110px;
+}
+
+.faq-two_shadow{
+	background-size: cover;
+}
+
+.faq-two_images-column{
+	position:relative;
+	margin-bottom:30px;
+}
+
+.faq-two_images-outer{
+	position:relative;
+	text-align:right;
+}
+
+.faq-two_image{
+	position:relative;
+	overflow:hidden;
+	margin-bottom:15px;
+	border-radius:25px;
+	display:inline-block;
+}
+
+.faq-two_image-two{
+	position:absolute;
+	left:5px;
+	top:100px;
+	overflow:hidden;
+	margin-bottom:15px;
+	border-radius:25px;
+	display:inline-block;
+}
+
+.faq-one_options{
+	position:absolute;
+	left: 120px;
+    bottom: 240px;
+	z-index:10;
+	border-radius:150px;
+	background-color:var(--white-color);
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.10);
+}
+
+.faq-one_authors{
+	position:relative;
+	display:flex;
+	gap:25px;
+	align-items:center;
+	border-radius:100px;
+	padding:15px 40px 15px 20px;
+}
+
+.faq-one_authors ul{
+	position:relative;
+	display:flex;
+	margin-left:20px;
+}
+
+.faq-one_authors ul li{
+	position:relative;
+	width:54px;
+	height:54px;
+	margin-left:-20px;
+	border-radius:50px;
+	display:inline-block;
+	border:3px solid var(--white-color);
+}
+
+.faq-one_reviews{
+	position:relative;
+	font-weight:800;
+	font-size:26px;
+	color:var(--black-color);
+}
+
+.faq-one_reviews span{
+	position:relative;
+	font-weight:600;
+	font-size:16px;
+	margin-top: 5px;
+}
+
+.faq-two_accordion-column{
+	position:relative;
+	margin-bottom:30px;
+}
