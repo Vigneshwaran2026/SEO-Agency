@@ -15,7 +15,6 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('animate.css');
-@import url('rtl.css');
 @import url('dark-body.css');
 
 @import url('slider.css');
@@ -39,9 +38,6 @@
 
 
 @import url('shop.css');
-@import url('privacy.css');
-@import url('not-found.css');
-@import url('coming-soon.css');
 @import url('page-title.css');
 @import url('jquery-ui.css');
 @import url('swiper.min.css');
