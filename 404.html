@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 | Page Not Found</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+:root{
+    --orange:#ff9800;
+    --orange-dark:#ff6d00;
+    --black:#070707;
+    --panel:#101010;
+    --line:rgba(255,255,255,.09);
+    --muted:#858585;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+    min-height:100vh;
+    font-family:Inter,Arial,sans-serif;
+    background:radial-gradient(circle at 50% 35%,rgba(255,152,0,.09),transparent 32%),var(--black);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+.error-page{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    position:relative;
+}
+.error-card{
+    width:min(620px,100%);
+    padding:48px 35px;
+    text-align:center;
+    background:linear-gradient(145deg,#121212,#0c0c0c);
+    border:1px solid var(--line);
+    border-radius:22px;
+    box-shadow:0 30px 90px rgba(0,0,0,.55);
+    position:relative;
+    z-index:2;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+.brand-logo {
+    width: 150px;
+    height: auto;
+    max-height: 55px;
+    object-fit: contain;
+    display: block;
+}
+
+.error-number{
+    font-size:clamp(90px,18vw,150px);
+    line-height:.9;
+    letter-spacing:-8px;
+    font-weight:800;
+    background:linear-gradient(135deg,#fff 20%,var(--orange) 65%,var(--orange-dark));
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:22px;
+}
+h1{font-size:24px;margin-bottom:10px}
+.description{
+    max-width:450px;
+    margin:0 auto 28px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.7;
+}
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:13px 22px;
+    border-radius:10px;
+    background:var(--orange);
+    color:#070707;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:800;
+    border:1px solid var(--orange);
+    transition:all .25s ease;
+}
+.back-btn:hover{
+    background:var(--orange-dark);
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 10px 28px rgba(255,152,0,.25);
+}
+.back-btn i{transition:transform .25s ease}
+.back-btn:hover i{transform:translateX(-3px)}
+.footer-text{margin-top:25px;color:#555;font-size:9px}
+@media(max-width:480px){
+    .error-card{padding:38px 22px}
+    .error-number{letter-spacing:-5px}
+    h1{font-size:20px}
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.secondary-btn {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.secondary-btn:hover {
+    background: #ff6d00;
+    color: #fff;
+}
+
+@media(max-width:480px) {
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group .back-btn {
+        width: 100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+<main class="error-page">
+    <section class="error-card">
+        <div class="brand">
+            <img src="assets/images/logo-2.webp" alt="Logo" class="brand-logo">
+        </div>
+
+        <div class="error-number">404</div>
+
+        <h1>Page Not Found</h1>
+
+        <p class="description">
+            The page you are looking for doesn't exist or may have been moved.
+            Please return to the Admin Dashboard and continue from there.
+        </p>
+
+        <div class="button-group">
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-house"></i>
+                Back to Home
+            </a>
+
+            <button type="button" class="back-btn secondary-btn" onclick="history.back()">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back
+            </button>
+        </div>
+
+        <div class="footer-text">SEO Agency Admin Portal</div>
+    </section>
+</main>
+</body>
+</html>

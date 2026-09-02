@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>SEO Client Dashboard</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js">
+        </script>
+        <style>
+
+                html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
+            :root{--orange:#ff9800;--orange-dark:#ff6d00;--black:#070707;--panel:#101010;--panel-2:#151515;--line:rgba(255,255,255,.09);--muted:#858585;--white:#fff;--green:#22c55e;--red:#ef4444}
+            *{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,system-ui,sans-serif;background:var(--black);color:#eee;min-height:100vh;overflow-x:hidden}.app{display:flex;min-height:100vh}.sidebar{width:260px;position:fixed;inset:0 auto 0 0;background:#0b0b0b;border-right:1px solid var(--line);padding:24px 16px;display:flex;flex-direction:column;z-index:20}.brand{height:50px;display:flex;align-items:center;gap:12px;padding:0 8px;margin-bottom:30px;color:#fff;text-decoration:none;font-weight:800;font-size:19px}.brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:grid;place-items:center;color:#000;box-shadow:0 8px 25px rgba(255,152,0,.25)}.nav-title{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:#666;font-weight:700;padding:0 12px;margin:0 0 10px}.nav{margin-bottom:26px}.nav-item{display:flex;align-items:center;gap:13px;padding:12px 14px;border-radius:12px;color:#999;font-size:13px;font-weight:600;cursor:pointer;margin-bottom:5px;transition:.2s}.nav-item i{width:20px;text-align:center;font-size:15px}.nav-item:hover{background:#151515;color:#fff}.nav-item{text-decoration:none}.nav-item span{line-height:1}.nav-item:visited{color:#999}.nav-item.active:visited{color:#080808}.nav-item.active{background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#080808;box-shadow:0 8px 24px rgba(255,152,0,.2)}.sidebar-bottom{margin-top:auto;border-top:1px solid var(--line);padding-top:15px}.profile-mini{display:flex;align-items:center;gap:10px;padding:10px}.avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#ffb74d,var(--orange-dark));color:#000;display:grid;place-items:center;font-size:12px;font-weight:800}.profile-mini strong{display:block;font-size:12px;color:#fff}.profile-mini span{display:block;font-size:10px;color:#777;margin-top:2px}.logout{width:100%;border:1px solid var(--line);background:#111;color:#aaa;border-radius:10px;padding:11px;margin-top:8px;cursor:pointer;font-weight:600}.logout:hover{color:#fff;border-color:#444}.main{margin-left:260px;width:calc(100% - 260px);padding:28px 32px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:28px}.heading h1{font-size:27px;letter-spacing:-.7px;color:#fff}.heading p{font-size:12px;color:var(--muted);margin-top:5px}.actions{display:flex;gap:10px;align-items:center}.search{width:240px;height:42px;background:#111;border:1px solid var(--line);border-radius:11px;display:flex;align-items:center;padding:0 13px;gap:9px;color:#666}.search input{border:0;outline:0;background:none;color:#fff;width:100%;font:inherit;font-size:12px}.icon-btn{width:42px;height:42px;border:1px solid var(--line);background:#111;color:#aaa;border-radius:11px;display:grid;place-items:center;position:relative}.icon-btn:hover{color:#fff;border-color:#444}.badge{position:absolute;right:-3px;top:-4px;background:var(--orange);color:#000;width:17px;height:17px;border-radius:50%;font-size:9px;font-weight:800;display:grid;place-items:center}.btn{border:0;border-radius:10px;padding:11px 15px;background:var(--orange);color:#090909;font-size:12px;font-weight:800;cursor:pointer}.btn:hover{background:#ffab2e}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:18px}.card{background:linear-gradient(145deg,#121212,#0d0d0d);border:1px solid var(--line);border-radius:16px;padding:20px}.stat-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.stat-icon{width:42px;height:42px;border-radius:11px;background:rgba(255,152,0,.1);color:var(--orange);display:grid;place-items:center}.trend{font-size:10px;font-weight:800;color:var(--green);background:rgba(34,197,94,.09);padding:5px 8px;border-radius:20px}.trend.down{color:var(--red);background:rgba(239,68,68,.09)}.value{font-size:27px;font-weight:800;color:#fff;letter-spacing:-.5px}.label{font-size:11px;color:#777;margin-top:5px}.grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-bottom:18px}.card-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.card-head h2{font-size:14px;color:#fff}.muted{font-size:10px;color:#777}.select{background:#161616;color:#aaa;border:1px solid var(--line);padding:7px 10px;border-radius:8px;font-size:10px}.chart-wrap{height:275px}.side-list{display:flex;flex-direction:column;gap:12px}.campaign{background:#151515;border:1px solid var(--line);border-radius:12px;padding:13px}.campaign-head{display:flex;justify-content:space-between;gap:10px}.campaign-name{font-size:12px;font-weight:700;color:#fff}.campaign-domain{font-size:10px;color:#666;margin-top:3px}.score{font-size:11px;color:var(--orange);font-weight:800}.bar{height:6px;background:#222;border-radius:8px;margin-top:11px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--orange-dark),var(--orange));border-radius:8px}.campaign-foot{display:flex;justify-content:space-between;margin-top:7px;font-size:9px;color:#666}.table-card{margin-bottom:18px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:650px}th{text-align:left;font-size:9px;text-transform:uppercase;letter-spacing:.7px;color:#666;padding:11px 12px;border-bottom:1px solid var(--line)}td{font-size:11px;color:#bbb;padding:14px 12px;border-bottom:1px solid rgba(255,255,255,.055)}tr:hover td{background:#141414}.keyword{color:#fff;font-weight:600}.rank{font-weight:800;color:#fff}.up{color:var(--green)}.down{color:var(--red)}.pill{padding:5px 8px;border-radius:20px;font-size:9px;font-weight:800;background:rgba(34,197,94,.1);color:var(--green)}.pill.orange{background:rgba(255,152,0,.1);color:var(--orange)}.bottom{display:grid;grid-template-columns:1fr 1fr;gap:18px}.activity{display:flex;gap:11px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.055)}.activity:last-child{border-bottom:0}.activity-icon{width:34px;height:34px;border-radius:10px;background:#171717;color:var(--orange);display:grid;place-items:center;flex:none}.activity strong{font-size:11px;color:#ddd}.activity p{font-size:10px;color:#666;margin-top:3px}.report-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.055)}.report-row:last-child{border-bottom:0}.report-info{display:flex;gap:11px;align-items:center}.report-icon{width:34px;height:34px;border-radius:9px;background:#171717;display:grid;place-items:center;color:var(--orange)}.report-info strong{font-size:11px;color:#ddd}.report-info span{display:block;font-size:9px;color:#666;margin-top:3px}.download{color:var(--orange);font-size:12px}.mobile{display:none}.toast{position:fixed;right:25px;bottom:25px;background:#171717;border:1px solid var(--line);padding:13px 16px;border-radius:11px;font-size:11px;color:#ddd;opacity:0;transform:translateY(10px);transition:.25s;z-index:50}.toast.show{opacity:1;transform:none}@media(max-width:1100px){.stats{grid-template-columns:repeat(2,1fr)}.grid,.bottom{grid-template-columns:1fr}}@media(max-width:760px){.sidebar{transform:translateX(-100%);transition:.25s}.sidebar.open{transform:none}.main{margin-left:0;width:100%;padding:18px}.mobile{display:grid}.topbar{align-items:flex-start}.search{display:none}.stats{grid-template-columns:1fr 1fr}.heading h1{font-size:22px}}@media(max-width:480px){.stats{grid-template-columns:1fr}.actions .btn{display:none}}
+        </style>
+        <style>
+            .page-section{display:none;animation:pageIn .22s ease}.page-section.active{display:block}@keyframes pageIn{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}
+            .nav-item{width:100%;border:0;text-align:left;font-family:inherit}
+            .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}.content-grid.three{grid-template-columns:repeat(3,1fr)}
+            .info-list{display:flex;flex-direction:column;gap:10px}.info-row{display:flex;justify-content:space-between;align-items:center;padding:13px;background:#151515;border:1px solid var(--line);border-radius:11px}.info-row strong{font-size:11px;color:#eee}.info-row span{font-size:10px;color:#777}
+            .big-number{font-size:30px;font-weight:800;color:#fff}.mini-label{font-size:10px;color:#777;margin-top:4px}.action-row{display:flex;gap:8px;flex-wrap:wrap}.action-btn{border:1px solid var(--line);background:#151515;color:#ddd;padding:9px 12px;border-radius:9px;font-size:10px;font-weight:700;cursor:pointer}.action-btn:hover{border-color:var(--orange);color:var(--orange)}
+            .message{padding:14px;border:1px solid var(--line);background:#151515;border-radius:12px;margin-bottom:10px}.message-head{display:flex;justify-content:space-between;gap:10px}.message strong{font-size:11px;color:#fff}.message small{color:#666}.message p{font-size:10px;color:#999;margin-top:7px;line-height:1.5}
+            .faq{border-bottom:1px solid var(--line);padding:14px 0}.faq strong{font-size:11px;color:#eee}.faq p{font-size:10px;color:#777;margin-top:6px;line-height:1.5}
+
+            /* ===== Sign Out Confirmation Modal ===== */
+            .logout-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;visibility:hidden;pointer-events:none;transition:.2s ease;z-index:100}
+            .logout-modal-overlay.show{opacity:1;visibility:visible;pointer-events:auto}
+            .logout-modal{width:min(420px,100%);background:linear-gradient(145deg,#171717,#0d0d0d);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,.55);transform:translateY(12px) scale(.98);transition:.2s ease}
+            .logout-modal-overlay.show .logout-modal{transform:none}
+            .logout-modal-icon{width:52px;height:52px;margin:0 auto 16px;border-radius:14px;display:grid;place-items:center;background:rgba(255,152,0,.12);color:var(--orange);font-size:20px}
+            .logout-modal h3{color:#fff;font-size:18px;margin-bottom:8px}
+            .logout-modal p{color:#888;font-size:11px;line-height:1.6;margin-bottom:22px}
+            .logout-modal-actions{display:flex;gap:10px;justify-content:center}
+            .logout-cancel,.logout-confirm{flex:1;border-radius:10px;padding:11px 14px;font-family:inherit;font-size:11px;font-weight:800;cursor:pointer}
+            .logout-cancel{background:#151515;color:#bbb;border:1px solid var(--line)}
+            .logout-cancel:hover{color:#fff;border-color:#444}
+            .logout-confirm{background:var(--orange);color:#090909;border:1px solid var(--orange)}
+            .logout-confirm:hover{background:#ffab2e}
+            @media(max-width:480px){.logout-modal{padding:22px}.logout-modal-actions{flex-direction:column}}
+
+            @media(max-width:1100px){.content-grid,.content-grid.three{grid-template-columns:1fr}}
+        </style>
+        <style>
+            /* ===== Scrollable Sidebar Fix ===== */
+            .sidebar {
+            height: 100vh;
+            max-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            overscroll-behavior: contain;
+            scrollbar-width: thin;
+            scrollbar-color: #444 #0b0b0b;
+            }
+            .sidebar::-webkit-scrollbar {
+            width: 6px;
+            }
+            .sidebar::-webkit-scrollbar-track {
+            background: #0b0b0b;
+            }
+            .sidebar::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+            }
+            .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #555;
+            }
+            .sidebar .nav {
+            flex: 0 0 auto;
+            }
+            .sidebar-bottom {
+            flex: 0 0 auto;
+            margin-top: 18px;
+            }
+            .main {
+            min-width: 0;
+            }
+            @media (max-width: 760px) {
+            .sidebar {
+            height: 100vh;
+            max-height: 100vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            }
+            }
+            .brand {
+            border: 0;
+            background: transparent;
+            width: 100%;
+            cursor: pointer;
+            text-align: left;
+            font: inherit;
+            }
+
+            .brand-logo {
+    width: 150px;
+    height: 45px;
+    object-fit: contain;
+    display: block;
+}
+        </style>
+    </head>
+    <body>
+        <div class="app">
+            <aside class="sidebar" id="sidebar">
+                        <a class="brand" href="#">
+    <img src="assets/images/logo-2.webp" alt="Logo" class="brand-logo">
+</a>
+                </button>
+                <div class="nav">
+                    <div class="nav-title">Workspace</div>
+                    <button class="nav-item active" data-page="overview" type="button">
+                        <i class="fa-solid fa-gauge-high">
+                        </i>
+                        <span>Overview</span>
+                    </button>
+                    <button class="nav-item" data-page="campaigns" type="button">
+                        <i class="fa-solid fa-rocket">
+                        </i>
+                        <span>My Campaigns</span>
+                    </button>
+                    <button class="nav-item" data-page="keywords" type="button">
+                        <i class="fa-solid fa-key">
+                        </i>
+                        <span>Keyword Rankings</span>
+                    </button>
+                    <button class="nav-item" data-page="analytics" type="button">
+                        <i class="fa-solid fa-chart-column">
+                        </i>
+                        <span>SEO Analytics</span>
+                    </button>
+                </div>
+                <div class="nav">
+                    <div class="nav-title">Reports & Support</div>
+                    <button class="nav-item" data-page="reports" type="button">
+                        <i class="fa-solid fa-file-lines">
+                        </i>
+                        <span>Reports</span>
+                    </button>
+                    <button class="nav-item" data-page="messages" type="button">
+                        <i class="fa-solid fa-message">
+                        </i>
+                        <span>Messages</span>
+                        <span style="margin-left:auto;background:var(--orange);color:#000;border-radius:10px;padding:2px 6px;font-size:8px">2</span>
+                    </button>
+                    <button class="nav-item" data-page="help" type="button">
+                        <i class="fa-solid fa-circle-question">
+                        </i>
+                        <span>Help Center</span>
+                    </button>
+                </div>
+                <div class="sidebar-bottom">
+                    <div class="profile-mini">
+                        <div class="avatar">U</div>
+                        <div>
+                            <strong>Client User</strong>
+                            <span id="loggedEmail"><i class="fa-solid fa-envelope"></i> Loading...</span>
+                        </div>
+                    </div>
+                    <button class="logout" type="button" onclick="openLogoutModal()">
+                        <i class="fa-solid fa-right-from-bracket"></i> &nbsp;Sign Out
+                    </button>
+                    </div>
+                </aside>
+                <main class="main">
+                    <div class="topbar">
+                        <div style="display:flex;align-items:center;gap:12px">
+                            <button class="icon-btn mobile" onclick="toggleMenu()">
+                                <i class="fa-solid fa-bars">
+                                </i>
+                            </button>
+                            <div class="heading">
+                                <h1>Good morning, <span id="greetingName">Client</span></h1>
+                                <p>Here’s your SEO performance at a glance.</p>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="search">
+                                <i class="fa-solid fa-magnifying-glass">
+                                </i>
+                                <input placeholder="Search keywords...">
+                            </div>
+                            <button class="icon-btn" onclick="window.location.href='404.html'">
+    <i class="fa-regular fa-bell"></i>
+    <span class="badge">2</span>
+</button>
+
+<button class="icon-btn profile-btn" type="button" title="Profile" onclick="window.location.href='404.html'">
+    <i class="fa-solid fa-user"></i>
+</button>
+                            </div>
+                        </div>
+                        <section class="page-section active" data-section="overview">
+                            <div class="stats">
+                                <div class="card">
+                                    <div class="stat-top">
+                                        <div class="stat-icon">
+                                            <i class="fa-solid fa-chart-line">
+                                            </i>
+                                        </div>
+                                        <span class="trend">+18.4%</span>
+                                    </div>
+                                    <div class="value">82.6K</div>
+                                    <div class="label">Organic Traffic</div>
+                                </div>
+                                <div class="card">
+                                    <div class="stat-top">
+                                        <div class="stat-icon">
+                                            <i class="fa-solid fa-arrow-trend-up">
+                                            </i>
+                                        </div>
+                                        <span class="trend">+12.8%</span>
+                                    </div>
+                                    <div class="value">326</div>
+                                    <div class="label">Keywords in Top 10</div>
+                                </div>
+                                <div class="card">
+                                    <div class="stat-top">
+                                        <div class="stat-icon">
+                                            <i class="fa-solid fa-bullseye">
+                                            </i>
+                                        </div>
+                                        <span class="trend">+6.2%</span>
+                                    </div>
+                                    <div class="value">91<span style="font-size:17px">/100</span>
+                                    </div>
+                                    <div class="label">SEO Health Score</div>
+                                </div>
+                                <div class="card">
+                                    <div class="stat-top">
+                                        <div class="stat-icon">
+                                            <i class="fa-solid fa-link">
+                                            </i>
+                                        </div>
+                                        <span class="trend">+9.5%</span>
+                                    </div>
+                                    <div class="value">1,842</div>
+                                    <div class="label">Backlinks</div>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <section class="card">
+                                    <div class="card-head">
+                                        <h2>Organic Traffic</h2>
+                                        <select class="select">
+                                            <option>Last 12 Months</option>
+                                            <option>Last 30 Days</option>
+                                        </select>
+                                    </div>
+                                    <div class="chart-wrap">
+                                        <canvas id="trafficChart">
+                                        </canvas>
+                                    </div>
+                                </section>
+                                <section class="card">
+                                    <div class="card-head">
+                                        <h2>My SEO Campaigns</h2>
+                                        <span class="muted">3 Active</span>
+                                    </div>
+                                    <div class="side-list">
+                                        <div class="campaign">
+                                            <div class="campaign-head">
+                                                <div>
+                                                    <div class="campaign-name">Acme Technologies</div>
+                                                    <div class="campaign-domain">acmetech.com</div>
+                                                </div>
+                                                <span class="score">94</span>
+                                            </div>
+                                            <div class="bar">
+                                                <div class="fill" style="width:94%">
+                                                </div>
+                                            </div>
+                                            <div class="campaign-foot">
+                                                <span>SEO Health</span>
+                                                <span>Excellent</span>
+                                            </div>
+                                        </div>
+                                        <div class="campaign">
+                                            <div class="campaign-head">
+                                                <div>
+                                                    <div class="campaign-name">Urban Homes</div>
+                                                    <div class="campaign-domain">urbanhomes.com</div>
+                                                </div>
+                                                <span class="score">87</span>
+                                            </div>
+                                            <div class="bar">
+                                                <div class="fill" style="width:87%">
+                                                </div>
+                                            </div>
+                                            <div class="campaign-foot">
+                                                <span>SEO Health</span>
+                                                <span>Good</span>
+                                            </div>
+                                        </div>
+                                        <div class="campaign">
+                                            <div class="campaign-head">
+                                                <div>
+                                                    <div class="campaign-name">Nova Retail</div>
+                                                    <div class="campaign-domain">novaretail.com</div>
+                                                </div>
+                                                <span class="score">79</span>
+                                            </div>
+                                            <div class="bar">
+                                                <div class="fill" style="width:79%">
+                                                </div>
+                                            </div>
+                                            <div class="campaign-foot">
+                                                <span>SEO Health</span>
+                                                <span>Improving</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <section class="card table-card">
+                                <div class="card-head">
+                                    <h2>Keyword Rankings</h2>
+                                    <button class="select">View All <i class="fa-solid fa-arrow-right">
+                                        </i>
+                                    </button>
+                                </div>
+                                <div class="table-wrap">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Keyword</th>
+                                                <th>Position</th>
+                                                <th>Change</th>
+                                                <th>Volume</th>
+                                                <th>URL</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="keyword">seo agency near me</td>
+                                                <td class="rank">#2</td>
+                                                <td class="up">
+                                                    <i class="fa-solid fa-arrow-up">
+                                                    </i> 4</td>
+                                                    <td>8,100</td>
+                                                    <td>/seo-agency</td>
+                                                    <td>
+                                                        <span class="pill">Top 3</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="keyword">digital marketing agency</td>
+                                                    <td class="rank">#5</td>
+                                                    <td class="up">
+                                                        <i class="fa-solid fa-arrow-up">
+                                                        </i> 7</td>
+                                                        <td>14,800</td>
+                                                        <td>/digital-marketing</td>
+                                                        <td>
+                                                            <span class="pill">Top 10</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="keyword">seo services</td>
+                                                        <td class="rank">#8</td>
+                                                        <td class="up">
+                                                            <i class="fa-solid fa-arrow-up">
+                                                            </i> 2</td>
+                                                            <td>22,200</td>
+                                                            <td>/services/seo</td>
+                                                            <td>
+                                                                <span class="pill">Top 10</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="keyword">local seo expert</td>
+                                                            <td class="rank">#14</td>
+                                                            <td class="down">
+                                                                <i class="fa-solid fa-arrow-down">
+                                                                </i> 3</td>
+                                                                <td>5,400</td>
+                                                                <td>/local-seo</td>
+                                                                <td>
+                                                                    <span class="pill orange">Watch</span>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </section>
+                                            <div class="bottom">
+                                                <section class="card">
+                                                    <div class="card-head">
+                                                        <h2>Recent Activity</h2>
+                                                        <span class="muted">View all</span>
+                                                    </div>
+                                                    <div class="activity">
+                                                        <div class="activity-icon">
+                                                            <i class="fa-solid fa-arrow-trend-up">
+                                                            </i>
+                                                        </div>
+                                                        <div>
+                                                            <strong>12 keywords moved into Top 10</strong>
+                                                            <p>Acme Technologies · 2 hours ago</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="activity">
+                                                        <div class="activity-icon">
+                                                            <i class="fa-solid fa-file-circle-check">
+                                                            </i>
+                                                        </div>
+                                                        <div>
+                                                            <strong>Monthly SEO report is ready</strong>
+                                                            <p>August 2026 · Yesterday</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="activity">
+                                                        <div class="activity-icon">
+                                                            <i class="fa-solid fa-link">
+                                                            </i>
+                                                        </div>
+                                                        <div>
+                                                            <strong>18 new backlinks discovered</strong>
+                                                            <p>Urban Homes · Yesterday</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="activity">
+                                                        <div class="activity-icon">
+                                                            <i class="fa-solid fa-screwdriver-wrench">
+                                                            </i>
+                                                        </div>
+                                                        <div>
+                                                            <strong>Technical issue resolved</strong>
+                                                            <p>Nova Retail · 2 days ago</p>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                <section class="card">
+                                                    <div class="card-head">
+                                                        <h2>Latest Reports</h2>
+                                                        <span class="muted">All reports</span>
+                                                    </div>
+                                                    <div class="report-row">
+                                                        <div class="report-info">
+                                                            <div class="report-icon">
+                                                                <i class="fa-solid fa-file-pdf">
+                                                                </i>
+                                                            </div>
+                                                            <div>
+                                                                <strong>August SEO Performance</strong>
+                                                                <span>Acme Technologies · PDF</span>
+                                                            </div>
+                                                        </div>
+                                                        <i class="fa-solid fa-download download">
+                                                        </i>
+                                                    </div>
+                                                    <div class="report-row">
+                                                        <div class="report-info">
+                                                            <div class="report-icon">
+                                                                <i class="fa-solid fa-file-lines">
+                                                                </i>
+                                                            </div>
+                                                            <div>
+                                                                <strong>Keyword Ranking Report</strong>
+                                                                <span>August 2026 · CSV</span>
+                                                            </div>
+                                                        </div>
+                                                        <i class="fa-solid fa-download download">
+                                                        </i>
+                                                    </div>
+                                                    <div class="report-row">
+                                                        <div class="report-info">
+                                                            <div class="report-icon">
+                                                                <i class="fa-solid fa-file-pdf">
+                                                                </i>
+                                                            </div>
+                                                            <div>
+                                                                <strong>Technical SEO Audit</strong>
+                                                                <span>Urban Homes · PDF</span>
+                                                            </div>
+                                                        </div>
+                                                        <i class="fa-solid fa-download download">
+                                                        </i>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </section>
+                                        <section class="page-section" data-section="campaigns">
+                                            <div class="card-head">
+                                                <button class="btn" onclick="go404()">
+                                                    <i class="fa-solid fa-plus">
+                                                    </i> New Campaign</button>
+                                                </div>
+                                                <div class="content-grid three">
+                                                    <div class="card">
+                                                        <div class="stat-top">
+                                                            <div class="stat-icon">
+                                                                <i class="fa-solid fa-building">
+                                                                </i>
+                                                            </div>
+                                                            <span class="pill">Active</span>
+                                                        </div>
+                                                        <div class="big-number">94/100</div>
+                                                        <div class="mini-label">Acme Technologies · acmetech.com</div>
+                                                        <div class="bar" style="margin-top:14px">
+                                                            <div class="fill" style="width:94%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="stat-top">
+                                                            <div class="stat-icon">
+                                                                <i class="fa-solid fa-house">
+                                                                </i>
+                                                            </div>
+                                                            <span class="pill">Active</span>
+                                                        </div>
+                                                        <div class="big-number">87/100</div>
+                                                        <div class="mini-label">Urban Homes · urbanhomes.com</div>
+                                                        <div class="bar" style="margin-top:14px">
+                                                            <div class="fill" style="width:87%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="stat-top">
+                                                            <div class="stat-icon">
+                                                                <i class="fa-solid fa-store">
+                                                                </i>
+                                                            </div>
+                                                            <span class="pill orange">Improving</span>
+                                                        </div>
+                                                        <div class="big-number">79/100</div>
+                                                        <div class="mini-label">Nova Retail · novaretail.com</div>
+                                                        <div class="bar" style="margin-top:14px">
+                                                            <div class="fill" style="width:79%">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card table-card">
+                                                    <div class="card-head">
+                                                        <h2>Campaign Performance</h2>
+                                                        <button class="action-btn" onclick="go404()">View Details <i class="fa-solid fa-arrow-right">
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="table-wrap">
+                                                        <table>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Campaign</th>
+                                                                    <th>Traffic</th>
+                                                                    <th>Keywords</th>
+                                                                    <th>Backlinks</th>
+                                                                    <th>Health</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="keyword">Acme Technologies</td>
+                                                                    <td>42.8K</td>
+                                                                    <td>186</td>
+                                                                    <td>824</td>
+                                                                    <td>
+                                                                        <span class="pill">Excellent</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <button class="action-btn" onclick="go404()">Open</button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="keyword">Urban Homes</td>
+                                                                    <td>24.6K</td>
+                                                                    <td>92</td>
+                                                                    <td>612</td>
+                                                                    <td>
+                                                                        <span class="pill">Good</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <button class="action-btn" onclick="go404()">Open</button>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="keyword">Nova Retail</td>
+                                                                    <td>15.2K</td>
+                                                                    <td>48</td>
+                                                                    <td>406</td>
+                                                                    <td>
+                                                                        <span class="pill orange">Improving</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <button class="action-btn" onclick="go404()">Open</button>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </section>
+                                            <section class="page-section" data-section="keywords">
+                                                <div class="card-head">
+                                                    <button class="btn" onclick="go404()">
+                                                        <i class="fa-solid fa-download">
+                                                        </i> Export Keywords</button>
+                                                    </div>
+                                                    <section class="card table-card">
+                                                        <div class="card-head">
+                                                            <h2>Ranking Overview</h2>
+                                                            <span class="muted">Updated today</span>
+                                                        </div>
+                                                        <div class="table-wrap">
+                                                            <table>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Keyword</th>
+                                                                        <th>Position</th>
+                                                                        <th>Change</th>
+                                                                        <th>Volume</th>
+                                                                        <th>Difficulty</th>
+                                                                        <th>Status</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="keyword">seo agency near me</td>
+                                                                        <td class="rank">#2</td>
+                                                                        <td class="up">↑ 4</td>
+                                                                        <td>8,100</td>
+                                                                        <td>Medium</td>
+                                                                        <td>
+                                                                            <span class="pill">Top 3</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="keyword">digital marketing agency</td>
+                                                                        <td class="rank">#5</td>
+                                                                        <td class="up">↑ 7</td>
+                                                                        <td>14,800</td>
+                                                                        <td>High</td>
+                                                                        <td>
+                                                                            <span class="pill">Top 10</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="keyword">seo services</td>
+                                                                        <td class="rank">#8</td>
+                                                                        <td class="up">↑ 2</td>
+                                                                        <td>22,200</td>
+                                                                        <td>High</td>
+                                                                        <td>
+                                                                            <span class="pill">Top 10</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="keyword">local seo expert</td>
+                                                                        <td class="rank">#14</td>
+                                                                        <td class="down">↓ 3</td>
+                                                                        <td>5,400</td>
+                                                                        <td>Medium</td>
+                                                                        <td>
+                                                                            <span class="pill orange">Watch</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </section>
+                                                    <div class="content-grid">
+                                                        <div class="card">
+                                                            <div class="card-head">
+                                                                <h2>Ranking Distribution</h2>
+                                                            </div>
+                                                            <div class="info-list">
+                                                                <div class="info-row">
+                                                                    <strong>Top 3</strong>
+                                                                    <span>48 keywords</span>
+                                                                </div>
+                                                                <div class="info-row">
+                                                                    <strong>Top 10</strong>
+                                                                    <span>326 keywords</span>
+                                                                </div>
+                                                                <div class="info-row">
+                                                                    <strong>Top 20</strong>
+                                                                    <span>514 keywords</span>
+                                                                </div>
+                                                                <div class="info-row">
+                                                                    <strong>Top 100</strong>
+                                                                    <span>1,284 keywords</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="card-head">
+                                                                <h2>Quick Actions</h2>
+                                                            </div>
+                                                            <div class="action-row">
+                                                                <button class="action-btn" onclick="go404()">Add Keyword</button>
+                                                                <button class="action-btn" onclick="go404()">Competitor Gap</button>
+                                                                <button class="action-btn" onclick="go404()">SERP History</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                <section class="page-section" data-section="analytics">
+                                                    <div class="card-head">
+                                                        <button class="btn" onclick="go404()">Full Analytics</button>
+                                                    </div>
+                                                    <div class="stats">
+                                                        <div class="card">
+                                                            <div class="stat-top">
+                                                                <div class="stat-icon">
+                                                                    <i class="fa-solid fa-users">
+                                                                    </i>
+                                                                </div>
+                                                                <span class="trend">+18.4%</span>
+                                                            </div>
+                                                            <div class="value">82.6K</div>
+                                                            <div class="label">Organic Visitors</div>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="stat-top">
+                                                                <div class="stat-icon">
+                                                                    <i class="fa-solid fa-eye">
+                                                                    </i>
+                                                                </div>
+                                                                <span class="trend">+11.2%</span>
+                                                            </div>
+                                                            <div class="value">1.24M</div>
+                                                            <div class="label">Search Impressions</div>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="stat-top">
+                                                                <div class="stat-icon">
+                                                                    <i class="fa-solid fa-mouse-pointer">
+                                                                    </i>
+                                                                </div>
+                                                                <span class="trend">+3.8%</span>
+                                                            </div>
+                                                            <div class="value">6.7%</div>
+                                                            <div class="label">Average CTR</div>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="stat-top">
+                                                                <div class="stat-icon">
+                                                                    <i class="fa-solid fa-gauge-high">
+                                                                    </i>
+                                                                </div>
+                                                                <span class="trend">+6.2%</span>
+                                                            </div>
+                                                            <div class="value">91</div>
+                                                            <div class="label">Technical Health</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-grid">
+                                                        <div class="card">
+                                                            <div class="card-head">
+                                                                <h2>Traffic Sources</h2>
+                                                            </div>
+                                                            <div class="info-list">
+                                                                <div class="info-row">
+                                                                    <strong>Organic Search</strong>
+                                                                    <span>68%</span>
+                                                                </div>
+                                                                <div class="info-row">
+                                                                    <strong>Direct</strong>
+                                                                    <span>17%</span>
+                                                                </div>
+                                                                <div class="info-row">
+                                                                    <strong>Referral</strong>
+                                                                    <span>9%</span>
+                                                                </div>
+                                                                <div class="info-row">
+                                                                    <strong>Social</strong>
+                                                                    <span>6%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="card-head">
+                                                                <h2>SEO Opportunities</h2>
+                                                            </div>
+                                                            <div class="info-list">
+                                                                <div class="info-row">
+                                                                    <strong>Content updates</strong>
+                                                                    <span>18 pages</span>
+                                                                </div>
+                                                                <div class="info-row">
+                                                                    <strong>Technical fixes</strong>
+                                                                    <span>7 issues</span>
+                                                                </div>
+                                                                <div class="info-row">
+                                                                    <strong>Link opportunities</strong>
+                                                                    <span>34 domains</span>
+                                                                </div>
+                                                                <div class="info-row">
+                                                                    <strong>Keywords to target</strong>
+                                                                    <span>62 terms</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                <section class="page-section" data-section="reports">
+                                                    <div class="card-head">
+                                                        <button class="btn" onclick="go404()">
+                                                            <i class="fa-solid fa-file-circle-plus">
+                                                            </i> Request Report</button>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="report-row">
+                                                                <div class="report-info">
+                                                                    <div class="report-icon">
+                                                                        <i class="fa-solid fa-file-pdf">
+                                                                        </i>
+                                                                    </div>
+                                                                    <div>
+                                                                        <strong>August SEO Performance</strong>
+                                                                        <span>Acme Technologies · PDF · Generated Aug 31, 2026</span>
+                                                                    </div>
+                                                                </div>
+                                                                <button class="action-btn" onclick="go404()">Download</button>
+                                                            </div>
+                                                            <div class="report-row">
+                                                                <div class="report-info">
+                                                                    <div class="report-icon">
+                                                                        <i class="fa-solid fa-file-csv">
+                                                                        </i>
+                                                                    </div>
+                                                                    <div>
+                                                                        <strong>Keyword Ranking Report</strong>
+                                                                        <span>All campaigns · CSV · Generated Aug 31, 2026</span>
+                                                                    </div>
+                                                                </div>
+                                                                <button class="action-btn" onclick="go404()">Download</button>
+                                                            </div>
+                                                            <div class="report-row">
+                                                                <div class="report-info">
+                                                                    <div class="report-icon">
+                                                                        <i class="fa-solid fa-file-pdf">
+                                                                        </i>
+                                                                    </div>
+                                                                    <div>
+                                                                        <strong>Technical SEO Audit</strong>
+                                                                        <span>Urban Homes · PDF · Generated Aug 29, 2026</span>
+                                                                    </div>
+                                                                </div>
+                                                                <button class="action-btn" onclick="go404()">Download</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-grid">
+                                                            <div class="card">
+                                                                <div class="card-head">
+                                                                    <h2>Report Schedule</h2>
+                                                                </div>
+                                                                <div class="info-list">
+                                                                    <div class="info-row">
+                                                                        <strong>Monthly Performance</strong>
+                                                                        <span>1st of every month</span>
+                                                                    </div>
+                                                                    <div class="info-row">
+                                                                        <strong>Keyword Report</strong>
+                                                                        <span>Weekly · Monday</span>
+                                                                    </div>
+                                                                    <div class="info-row">
+                                                                        <strong>Technical Audit</strong>
+                                                                        <span>Monthly</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card">
+                                                                <div class="card-head">
+                                                                    <h2>Report Settings</h2>
+                                                                </div>
+                                                                <p class="muted" style="line-height:1.7">Choose the reports you want to receive and configure your preferred delivery settings.</p>
+                                                                <button class="action-btn" style="margin-top:15px" onclick="go404()">Manage Settings</button>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <section class="page-section" data-section="messages">
+                                                        <div class="card-head">
+                                                            <button class="btn" onclick="go404()">
+                                                                <i class="fa-solid fa-pen">
+                                                                </i> New Message</button>
+                                                            </div>
+                                                            <div class="card">
+                                                                <div class="message">
+                                                                    <div class="message-head">
+                                                                        <strong>Monthly SEO review is ready</strong>
+                                                                        <small>Today, 9:30 AM</small>
+                                                                    </div>
+                                                                    <p>Your August performance report is ready. The team has also added recommendations for improving your local SEO visibility.</p>
+                                                                </div>
+                                                                <div class="message">
+                                                                    <div class="message-head">
+                                                                        <strong>Keyword strategy update</strong>
+                                                                        <small>Yesterday</small>
+                                                                    </div>
+                                                                    <p>We added 12 new commercial-intent keywords to the current campaign and moved 7 terms into the Top 10.</p>
+                                                                </div>
+                                                                <div class="message">
+                                                                    <div class="message-head">
+                                                                        <strong>Technical audit completed</strong>
+                                                                        <small>Aug 29</small>
+                                                                    </div>
+                                                                    <p>The technical audit is complete. Several crawl and metadata improvements have been identified.</p>
+                                                                </div>
+                                                            </div>
+                                                        </section>
+                                                        <section class="page-section" data-section="help">
+                                                            <div class="card-head">
+                                                                <button class="btn" onclick="go404()">
+                                                                    <i class="fa-solid fa-headset">
+                                                                    </i> Contact Support</button>
+                                                                </div>
+                                                                <div class="content-grid">
+                                                                    <div class="card">
+                                                                        <div class="card-head">
+                                                                            <h2>Frequently Asked Questions</h2>
+                                                                        </div>
+                                                                        <div class="faq">
+                                                                            <strong>How often are rankings updated?</strong>
+                                                                            <p>Keyword ranking data is refreshed regularly so you can track meaningful movement across your campaigns.</p>
+                                                                        </div>
+                                                                        <div class="faq">
+                                                                            <strong>When will my SEO report be available?</strong>
+                                                                            <p>Scheduled reports appear in your Reports section after generation.</p>
+                                                                        </div>
+                                                                        <div class="faq">
+                                                                            <strong>How can I add a new campaign?</strong>
+                                                                            <p>Use the New Campaign action in My Campaigns to start the campaign workflow.</p>
+                                                                        </div>
+                                                                        <div class="faq">
+                                                                            <strong>Can I contact my SEO team?</strong>
+                                                                            <p>Yes. Use Messages to communicate with your account team.</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="card">
+                                                                        <div class="card-head">
+                                                                            <h2>Quick Support</h2>
+                                                                        </div>
+                                                                        <div style="padding:28px;text-align:center;color:#777;border:1px dashed #333;border-radius:12px;background:#111">
+                                                                            <i class="fa-solid fa-life-ring" style="font-size:28px;color:var(--orange);margin-bottom:10px">
+                                                                            </i>
+                                                                            <strong style="display:block;color:#ddd;font-size:13px;margin-bottom:5px">Need more help?</strong>
+                                                                            <span>Our support team can help with campaigns, reports, rankings and analytics.</span>
+                                                                            <div style="margin-top:15px">
+                                                                                <button class="action-btn" onclick="go404()">Open Support Center</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        </main>
+                                                    </div>
+                                    
+                <!-- Sign Out Confirmation -->
+                <div class="logout-modal-overlay" id="logoutModal" role="dialog" aria-modal="true" aria-labelledby="logoutTitle">
+                    <div class="logout-modal">
+                        <div class="logout-modal-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
+                        <h3 id="logoutTitle">Confirm Sign Out</h3>
+                        <p>Are you sure you want to sign out? You will be redirected to the Sign In page.</p>
+                        <div class="logout-modal-actions">
+                            <button class="logout-cancel" type="button" onclick="closeLogoutModal()">Cancel</button>
+                            <button class="logout-confirm" type="button" onclick="confirmLogout()">Yes, Sign Out</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toast" id="toast">
+                                                    </div>
+                                                    <script>
+                                                        const ctx=document.getElementById('trafficChart');
+                                                        if(ctx){new Chart(ctx,{type:'line',data:{labels:['Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'],datasets:[{data:[38,44,42,51,57,54,63,68,64,73,78,83],borderColor:'#ff9800',backgroundColor:'rgba(255,152,0,.12)',fill:true,tension:.4,pointRadius:3,pointBackgroundColor:'#ff9800',pointBorderColor:'#101010',pointBorderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:'#666',font:{size:9}}},y:{grid:{color:'rgba(255,255,255,.06)'},ticks:{color:'#666',font:{size:9}}}}}});}
+                                                        function toggleMenu(){document.getElementById('sidebar').classList.toggle('open')}
+                                                        function showToast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
+                                                        function go404(){window.location.href='404.html'}
+
+                                                        // Show the email used on the Sign In page.
+                                                        const savedEmail=localStorage.getItem('loginEmail')||'client@example.com';
+                                                        const emailEl=document.getElementById('loggedEmail');
+                                                        if(emailEl) emailEl.innerHTML='<i class="fa-solid fa-envelope"></i> '+savedEmail;
+
+                                                        const emailName=savedEmail.split('@')[0].replace(/[._-]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+                                                        const greeting=document.getElementById('greetingName');
+                                                        if(greeting) greeting.textContent=emailName||'Client';
+
+                                                        // In-screen sign-out confirmation.
+                                                        function openLogoutModal(){document.getElementById('logoutModal').classList.add('show')}
+                                                        function closeLogoutModal(){document.getElementById('logoutModal').classList.remove('show')}
+                                                        function confirmLogout(){
+                                                            localStorage.removeItem('loginEmail');
+                                                            localStorage.removeItem('loginRole');
+                                                            window.location.href='signin.html';
+                                                        }
+                                                        document.getElementById('logoutModal').addEventListener('click',function(e){
+                                                            if(e.target===this) closeLogoutModal();
+                                                        });
+                                                        document.addEventListener('keydown',function(e){
+                                                            if(e.key==='Escape') closeLogoutModal();
+                                                        });
+
+                                                        // Sidebar items switch sections without leaving the dashboard.
+                                                        const pageNames={overview:'Overview',campaigns:'My Campaigns',keywords:'Keyword Rankings',analytics:'SEO Analytics',reports:'Reports',messages:'Messages',help:'Help Center'};
+                                                        document.querySelectorAll('.nav-item[data-page]').forEach(item=>item.addEventListener('click',()=>{
+                                                            document.querySelectorAll('.nav-item[data-page]').forEach(x=>x.classList.remove('active'));
+                                                            item.classList.add('active');
+                                                            document.querySelectorAll('.page-section').forEach(x=>x.classList.remove('active'));
+                                                            document.querySelector('.page-section[data-section="'+item.dataset.page+'"]').classList.add('active');
+                                                            const h=document.querySelector('.heading h1'),p=document.querySelector('.heading p');
+                                                            if(item.dataset.page!=='overview'){
+                                                                h.textContent=pageNames[item.dataset.page];
+                                                                p.textContent='Manage and review your SEO account information.';
+                                                            }else{
+                                                                h.innerHTML='Good morning, <span id="greetingName">'+emailName+'</span> 👋';
+                                                                p.textContent='Here’s your SEO performance at a glance.';
+                                                            }
+                                                            if(window.innerWidth<=760) document.getElementById('sidebar').classList.remove('open');
+                                                        }));
+                                                    </script>
+                                                </body>
+                                            </html>

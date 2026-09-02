@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly | Secure Portal</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+    html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+:root{
+    --orange:#ff9800;
+    --orange-dark:#ff6d00;
+    --black:#070707;
+    --panel:#101010;
+    --panel-2:#151515;
+    --line:rgba(255,255,255,.09);
+    --muted:#858585;
+    --white:#fff;
+    --green:#20d889;
+    --red:#ff5c70;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{min-height:100%}
+
+body{
+    font-family:"Inter",sans-serif;
+    background:#050505;
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+/* Background */
+.bg{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+    background:
+        radial-gradient(circle at 15% 20%,rgba(255,152,0,.13),transparent 28%),
+        radial-gradient(circle at 88% 78%,rgba(255,109,0,.10),transparent 30%),
+        #050505;
+}
+
+.grid{
+    position:absolute;
+    inset:-80px;
+    opacity:.055;
+    background-image:
+        linear-gradient(rgba(255,255,255,.55) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.55) 1px,transparent 1px);
+    background-size:58px 58px;
+    animation:gridMove 18s linear infinite;
+}
+
+@keyframes gridMove{
+    to{transform:translate(58px,58px)}
+}
+
+.glow{
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.18;
+    background:var(--orange);
+    animation:float 11s ease-in-out infinite alternate;
+}
+
+.glow.one{left:-170px;top:-120px}
+.glow.two{
+    right:-180px;
+    bottom:-150px;
+    background:var(--orange-dark);
+    animation-delay:-4s;
+}
+
+@keyframes float{
+    0%{transform:translate(0,0) scale(.85)}
+    50%{transform:translate(100px,80px) scale(1.15)}
+    100%{transform:translate(-30px,150px) scale(1)}
+}
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:var(--orange);
+    box-shadow:0 0 15px rgba(255,152,0,.9);
+    animation:particle 8s linear infinite;
+}
+
+.p1{left:12%;bottom:-10px;animation-delay:0s}
+.p2{left:31%;bottom:-10px;animation-delay:2.4s}
+.p3{left:54%;bottom:-10px;animation-delay:4.5s}
+.p4{left:76%;bottom:-10px;animation-delay:1.5s}
+.p5{left:91%;bottom:-10px;animation-delay:5.5s}
+
+@keyframes particle{
+    0%{transform:translateY(0);opacity:0}
+    15%{opacity:1}
+    85%{opacity:.8}
+    100%{transform:translateY(-110vh);opacity:0}
+}
+
+/* Header */
+.header{
+    position:relative;
+    z-index:10;
+    height:86px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 42px;
+}
+
+.logo{
+    display:inline-flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.logo img{
+    width:170px;
+    height:auto;
+    display:block;
+}
+
+.home-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:12px 19px;
+    border-radius:12px;
+    color:#000;
+    background:linear-gradient(135deg,var(--orange),var(--orange-dark));
+    text-decoration:none;
+    font-size:13px;
+    font-weight:800;
+    box-shadow:0 10px 30px rgba(255,130,0,.18);
+    transition:.25s ease;
+}
+
+.home-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 35px rgba(255,130,0,.28);
+}
+
+/* Main */
+.page{
+    position:relative;
+    z-index:2;
+    min-height:calc(100vh - 86px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:35px 20px 65px;
+}
+
+.auth-shell{
+    width:min(1040px,100%);
+    min-height:610px;
+    display:grid;
+    grid-template-columns:42% 58%;
+    border:1px solid var(--line);
+    border-radius:30px;
+    overflow:hidden;
+    background:rgba(13,13,13,.88);
+    backdrop-filter:blur(24px);
+    box-shadow:0 35px 100px rgba(0,0,0,.65);
+}
+
+/* Left panel */
+.brand-panel{
+    position:relative;
+    padding:50px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    overflow:hidden;
+    border-right:1px solid var(--line);
+    background:
+        radial-gradient(circle at 25% 25%,rgba(255,152,0,.16),transparent 34%),
+        linear-gradient(145deg,#17110a,#0c0c0c 55%,#080808);
+}
+
+.brand-panel:after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border:1px solid rgba(255,152,0,.13);
+    border-radius:50%;
+    right:-130px;
+    bottom:-120px;
+    box-shadow:0 0 0 35px rgba(255,152,0,.025),
+               0 0 0 70px rgba(255,152,0,.018);
+}
+
+.badge{
+    position:relative;
+    z-index:2;
+    width:max-content;
+    padding:7px 11px;
+    border:1px solid rgba(255,152,0,.25);
+    background:rgba(255,152,0,.07);
+    color:#ffb74d;
+    border-radius:999px;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.3px;
+    text-transform:uppercase;
+}
+
+.brand-copy{
+    position:relative;
+    z-index:2;
+}
+
+.brand-copy h1{
+    font-size:clamp(32px,4vw,52px);
+    line-height:1.04;
+    letter-spacing:-2px;
+    margin-bottom:18px;
+}
+
+.brand-copy h1 span{color:var(--orange)}
+
+.brand-copy p{
+    max-width:370px;
+    color:#969696;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.features{
+    position:relative;
+    z-index:2;
+    display:grid;
+    gap:12px;
+}
+
+.feature{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    color:#c8c8c8;
+    font-size:12px;
+}
+
+.feature i{
+    width:28px;
+    height:28px;
+    display:grid;
+    place-items:center;
+    border-radius:8px;
+    color:var(--orange);
+    background:rgba(255,152,0,.08);
+    border:1px solid rgba(255,152,0,.13);
+}
+
+/* Auth panel */
+.auth-panel{
+    padding:48px 56px;
+    display:flex;
+    align-items:center;
+}
+
+.auth-inner{
+    width:100%;
+    max-width:500px;
+    margin:auto;
+}
+
+.tabs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    padding:4px;
+    margin-bottom:30px;
+    background:#090909;
+    border:1px solid var(--line);
+    border-radius:15px;
+}
+
+.tab{
+    border:0;
+    border-radius:11px;
+    padding:12px;
+    background:transparent;
+    color:#777;
+    font:600 13px "Inter",sans-serif;
+    cursor:pointer;
+    transition:.25s ease;
+}
+
+.tab.active{
+    color:#000;
+    background:linear-gradient(135deg,var(--orange),var(--orange-dark));
+    box-shadow:0 7px 22px rgba(255,130,0,.18);
+}
+
+.heading{
+    margin-bottom:25px;
+}
+
+.heading .eyebrow{
+    color:var(--orange);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.heading h2{
+    font-size:30px;
+    letter-spacing:-1px;
+    margin-bottom:8px;
+}
+
+.heading p{
+    color:#777;
+    font-size:12px;
+    line-height:1.6;
+}
+
+.form{
+    display:none;
+}
+
+.form.active{
+    display:block;
+    animation:formIn .35s ease;
+}
+
+@keyframes formIn{
+    from{opacity:0;transform:translateY(8px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.field{
+    margin-bottom:15px;
+}
+
+.field label{
+    display:block;
+    color:#a4a4a4;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    margin-bottom:7px;
+}
+
+.input-wrap{
+    position:relative;
+}
+
+.input-wrap>i{
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#555;
+    font-size:12px;
+    pointer-events:none;
+}
+
+.input{
+    width:100%;
+    height:47px;
+    padding:0 43px;
+    color:#fff;
+    background:#0a0a0a;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;
+    outline:none;
+    font:500 12px "Inter",sans-serif;
+    transition:.2s ease;
+}
+
+.input:focus{
+    border-color:rgba(255,152,0,.65);
+    box-shadow:0 0 0 3px rgba(255,152,0,.08);
+}
+
+.toggle{
+    position:absolute;
+    right:13px;
+    top:50%;
+    transform:translateY(-50%);
+    border:0;
+    background:none;
+    color:#555;
+    cursor:pointer;
+}
+
+.toggle:hover{color:#aaa}
+
+.row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:3px 0 18px;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:#777;
+    font-size:11px;
+}
+
+.remember input{accent-color:var(--orange)}
+
+.link{
+    color:var(--orange);
+    font-size:11px;
+    text-decoration:none;
+}
+
+.link:hover{text-decoration:underline}
+
+.primary{
+    width:100%;
+    height:49px;
+    border:0;
+    border-radius:13px;
+    background:linear-gradient(135deg,var(--orange),var(--orange-dark));
+    color:#000;
+    font:800 13px "Inter",sans-serif;
+    cursor:pointer;
+    box-shadow:0 12px 28px rgba(255,130,0,.18);
+    transition:.25s ease;
+}
+
+.primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 16px 35px rgba(255,130,0,.28);
+}
+
+.primary:disabled{
+    opacity:.65;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.divider{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#555;
+    font-size:10px;
+    margin:19px 0;
+}
+
+.divider:before,.divider:after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:rgba(255,255,255,.07);
+}
+
+.socials{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.social{
+    height:43px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:11px;
+    background:#0b0b0b;
+    color:#d5d5d5;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font:600 11px "Inter",sans-serif;
+    transition:.2s ease;
+}
+
+.social:hover{
+    border-color:rgba(255,152,0,.45);
+    color:var(--orange);
+    background:#101010;
+    transform:translateY(-1px);
+}
+
+.password-box{
+    margin-top:8px;
+    padding:10px;
+    border-radius:10px;
+    background:#0a0a0a;
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.requirements{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+}
+
+.req{
+    color:#555;
+    font-size:9px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.req.valid{color:var(--green)}
+.req i{font-size:8px}
+
+.error{
+    display:none;
+    color:var(--red);
+    font-size:10px;
+    margin-top:6px;
+}
+
+.error.show{display:block}
+
+.toast{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    z-index:100;
+    min-width:270px;
+    max-width:360px;
+    padding:14px 16px;
+    border-radius:13px;
+    background:#141414;
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+    transform:translateY(130px);
+    opacity:0;
+    pointer-events:none;
+    transition:.3s ease;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+.toast strong{
+    display:block;
+    color:#fff;
+    font-size:12px;
+    margin-bottom:3px;
+}
+
+.toast span{
+    color:#777;
+    font-size:10px;
+}
+
+@media(max-width:850px){
+    .auth-shell{
+        grid-template-columns:1fr;
+        max-width:560px;
+    }
+
+    .brand-panel{
+        min-height:260px;
+        padding:30px;
+        border-right:0;
+        border-bottom:1px solid var(--line);
+    }
+
+    .brand-copy h1{font-size:34px}
+    .features{display:none}
+    .auth-panel{padding:32px 28px}
+}
+
+@media(max-width:520px){
+    .header{
+        height:72px;
+        padding:0 18px;
+    }
+
+    .logo img{width:135px}
+    .home-btn{padding:10px 13px;font-size:11px}
+
+    .page{
+        padding:18px 12px 35px;
+        align-items:flex-start;
+    }
+
+    .auth-shell{border-radius:22px}
+    .brand-panel{padding:25px;min-height:220px}
+    .auth-panel{padding:25px 18px}
+    .heading h2{font-size:26px}
+    .requirements{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+    <div class="grid"></div>
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
+    <span class="particle p5"></span>
+</div>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <img src="assets/images/logo-2.webp" alt="Stackly">
+    </a>
+
+    <a href="index.html" class="home-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Home
+    </a>
+</header>
+
+<main class="page">
+    <section class="auth-shell">
+
+        <aside class="brand-panel">
+            <div class="badge">Secure Access</div>
+
+            <div class="brand-copy">
+                <h1>Welcome to<br><span>Stackly.</span></h1>
+                <p>
+                    Access your digital workspace with a secure,
+                    modern authentication experience designed for
+                    your team and business.
+                </p>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Secure role-based access</span>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Fast and simple dashboard access</span>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Manage your digital workspace</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="auth-panel">
+            <div class="auth-inner">
+
+                <div class="tabs">
+                    <button class="tab active" id="loginTab" type="button">
+                        <i class="fa-solid fa-right-to-bracket"></i>&nbsp; Sign In
+                    </button>
+                    <button class="tab" id="signupTab" type="button">
+                        <i class="fa-solid fa-user-plus"></i>&nbsp; Sign Up
+                    </button>
+                </div>
+
+                <!-- LOGIN -->
+                <form id="loginForm" class="form active" novalidate>
+                    <div class="heading">
+                        <div class="eyebrow">Welcome Back</div>
+                        <h2>Sign in to your account</h2>
+                        <p>Enter your credentials to continue to your dashboard.</p>
+                    </div>
+
+                    <div class="field">
+                        <label for="loginRole">Account Type</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-user-shield"></i>
+                            <select id="loginRole" class="input" style="appearance:auto;padding-left:43px">
+                                <option value="User">User</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="loginEmail">Email Address</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input id="loginEmail" class="input" type="email"
+                                   placeholder="you@example.com" autocomplete="email">
+                        </div>
+                        <div id="emailError" class="error">Please enter a valid email address.</div>
+                    </div>
+
+                    <div class="field">
+                        <label for="loginPassword">Password</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock"></i>
+                            <input id="loginPassword" class="input" type="password"
+                                   placeholder="Enter your password" autocomplete="current-password">
+                            <button class="toggle" type="button" onclick="togglePassword('loginPassword',this)">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <div class="password-box">
+                            <div class="requirements">
+                                <div class="req" id="lMin"><i class="fa-solid fa-circle-xmark"></i> 8+ Characters</div>
+                                <div class="req" id="lUpper"><i class="fa-solid fa-circle-xmark"></i> Uppercase Letter</div>
+                                <div class="req" id="lLower"><i class="fa-solid fa-circle-xmark"></i> Lowercase Letter</div>
+                                <div class="req" id="lSpecial"><i class="fa-solid fa-circle-xmark"></i> Number & Symbol</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="remember">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="404.html" class="link">Forgot password?</a>
+                    </div>
+
+                    <button class="primary" id="loginBtn" type="submit">
+                        Sign In to Dashboard
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <div class="divider">Or continue with</div>
+
+                    <div class="socials">
+                        <button type="button" class="social" onclick="location.href='404.html'">
+                            <i class="fa-brands fa-google"></i> Google
+                        </button>
+                        <button type="button" class="social" onclick="location.href='404.html'">
+                            <i class="fa-brands fa-apple"></i> Apple
+                        </button>
+                    </div>
+                </form>
+
+                <!-- SIGN UP -->
+                <form id="signupForm" class="form" novalidate>
+                    <div class="heading">
+                        <div class="eyebrow">Create Account</div>
+                        <h2>Start with Stackly</h2>
+                        <p>Create your account and get secure access to the portal.</p>
+                    </div>
+
+                    <div class="field">
+                        <label for="signupName">Full Name</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-user"></i>
+                            <input id="signupName" class="input" type="text"
+                                   placeholder="Your full name" autocomplete="name">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="signupEmail">Email Address</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input id="signupEmail" class="input" type="email"
+                                   placeholder="you@example.com" autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="signupRole">Account Type</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-user-shield"></i>
+                            <select id="signupRole" class="input" style="appearance:auto;padding-left:43px">
+                                <option value="User">User</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="signupPassword">Password</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock"></i>
+                            <input id="signupPassword" class="input" type="password"
+                                   placeholder="Create a strong password">
+                            <button class="toggle" type="button" onclick="togglePassword('signupPassword',this)">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <div class="password-box">
+                            <div class="requirements">
+                                <div class="req" id="sMin"><i class="fa-solid fa-circle-xmark"></i> 8+ Characters</div>
+                                <div class="req" id="sUpper"><i class="fa-solid fa-circle-xmark"></i> Uppercase Letter</div>
+                                <div class="req" id="sLower"><i class="fa-solid fa-circle-xmark"></i> Lowercase Letter</div>
+                                <div class="req" id="sSpecial"><i class="fa-solid fa-circle-xmark"></i> Number & Symbol</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="signupConfirm">Confirm Password</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock"></i>
+                            <input id="signupConfirm" class="input" type="password"
+                                   placeholder="Confirm your password">
+                            <button class="toggle" type="button" onclick="togglePassword('signupConfirm',this)">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="primary" id="signupBtn" type="submit">
+                        Create Account
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="toast" class="toast">
+    <strong id="toastTitle"></strong>
+    <span id="toastText"></span>
+</div>
+
+<script>
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const loginTab = document.getElementById("loginTab");
+const signupTab = document.getElementById("signupTab");
+const loginForm = document.getElementById("loginForm");
+const signupForm = document.getElementById("signupForm");
+
+function showLogin(){
+    loginForm.classList.add("active");
+    signupForm.classList.remove("active");
+    loginTab.classList.add("active");
+    signupTab.classList.remove("active");
+}
+
+function showSignup(){
+    loginForm.classList.remove("active");
+    signupForm.classList.add("active");
+    loginTab.classList.remove("active");
+    signupTab.classList.add("active");
+}
+
+loginTab.addEventListener("click",showLogin);
+signupTab.addEventListener("click",showSignup);
+
+function togglePassword(id,button){
+    const input=document.getElementById(id);
+    const icon=button.querySelector("i");
+
+    if(input.type==="password"){
+        input.type="text";
+        icon.className="fa-solid fa-eye-slash";
+    }else{
+        input.type="password";
+        icon.className="fa-solid fa-eye";
+    }
+}
+
+function checkPassword(password,prefix){
+    const min=password.length>=8;
+    const upper=/[A-Z]/.test(password);
+    const lower=/[a-z]/.test(password);
+    const special=/[0-9]/.test(password) && /[^A-Za-z0-9]/.test(password);
+
+    setRequirement(prefix+"Min",min);
+    setRequirement(prefix+"Upper",upper);
+    setRequirement(prefix+"Lower",lower);
+    setRequirement(prefix+"Special",special);
+
+    return min && upper && lower && special;
+}
+
+function setRequirement(id,valid){
+    const el=document.getElementById(id);
+    if(!el)return;
+
+    el.classList.toggle("valid",valid);
+    el.querySelector("i").className=valid
+        ?"fa-solid fa-circle-check"
+        :"fa-solid fa-circle-xmark";
+}
+
+document.getElementById("loginPassword").addEventListener("input",function(){
+    checkPassword(this.value,"l");
+});
+
+document.getElementById("signupPassword").addEventListener("input",function(){
+    checkPassword(this.value,"s");
+});
+
+loginForm.addEventListener("submit",function(e){
+    e.preventDefault();
+
+    const email=document.getElementById("loginEmail").value.trim();
+    const password=document.getElementById("loginPassword").value;
+    const role=document.getElementById("loginRole").value;
+    const emailError=document.getElementById("emailError");
+
+    if(!EMAIL_REGEX.test(email)){
+        emailError.classList.add("show");
+        return;
+    }
+
+    emailError.classList.remove("show");
+
+    if(!checkPassword(password,"l")){
+        showToast("Weak Password","Use 8+ characters with uppercase, lowercase, number and symbol.");
+        return;
+    }
+
+    const button=document.getElementById("loginBtn");
+    button.disabled=true;
+    button.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Authenticating...';
+
+    setTimeout(function(){
+         localStorage.setItem("loginEmail", email);
+        if(role==="Admin"){
+            window.location.href="admin-dashboard.html";
+        }else{
+            window.location.href="user-dashboard.html";
+        }
+    },800);
+});
+
+signupForm.addEventListener("submit",function(e){
+    e.preventDefault();
+
+    const name=document.getElementById("signupName").value.trim();
+    const email=document.getElementById("signupEmail").value.trim();
+    const password=document.getElementById("signupPassword").value;
+    const confirm=document.getElementById("signupConfirm").value;
+
+    if(!name){
+        showToast("Name Required","Please enter your full name.");
+        return;
+    }
+
+    if(!EMAIL_REGEX.test(email)){
+        showToast("Invalid Email","Please enter a valid email address.");
+        return;
+    }
+
+    if(!checkPassword(password,"s")){
+        showToast("Weak Password","Please meet all password requirements.");
+        return;
+    }
+
+    if(password!==confirm){
+        showToast("Password Mismatch","Passwords do not match.");
+        return;
+    }
+
+    const button=document.getElementById("signupBtn");
+    button.disabled=true;
+    button.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Creating Account...';
+
+    setTimeout(function(){
+        button.disabled=false;
+        button.innerHTML='Create Account <i class="fa-solid fa-arrow-right"></i>';
+
+        showToast("Account Created","Your account has been created successfully.");
+        signupForm.reset();
+        document.querySelectorAll("#signupForm .req").forEach(function(el){
+            el.classList.remove("valid");
+            el.querySelector("i").className="fa-solid fa-circle-xmark";
+        });
+
+        setTimeout(showLogin,700);
+    },900);
+});
+
+function showToast(title,text){
+    const toast=document.getElementById("toast");
+    document.getElementById("toastTitle").textContent=title;
+    document.getElementById("toastText").textContent=text;
+
+    toast.classList.add("show");
+    clearTimeout(window.toastTimer);
+
+    window.toastTimer=setTimeout(function(){
+        toast.classList.remove("show");
+    },3500);
+}
+</script>
+
+</body>
+</html>
