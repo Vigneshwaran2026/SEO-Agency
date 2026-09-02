@@ -182,94 +182,99 @@ body{
     backdrop-filter:blur(24px);
     box-shadow:0 35px 100px rgba(0,0,0,.65);
 }
-
-/* Left panel */
-.brand-panel{
-    position:relative;
-    padding:50px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    overflow:hidden;
-    border-right:1px solid var(--line);
+/* Left Panel */
+/* Left Panel */
+.brand-panel {
+    position: relative;
+    padding: 30px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    border-right: 1px solid var(--line);
     background:
-        radial-gradient(circle at 25% 25%,rgba(255,152,0,.16),transparent 34%),
-        linear-gradient(145deg,#17110a,#0c0c0c 55%,#080808);
+        radial-gradient(circle at 25% 25%, rgba(255,152,0,.16), transparent 34%),
+        linear-gradient(145deg, #17110a, #0c0c0c 55%, #080808);
 }
 
-.brand-panel:after{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    border:1px solid rgba(255,152,0,.13);
-    border-radius:50%;
-    right:-130px;
-    bottom:-120px;
-    box-shadow:0 0 0 35px rgba(255,152,0,.025),
-               0 0 0 70px rgba(255,152,0,.018);
+.brand-panel:after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255,152,0,.13);
+    border-radius: 50%;
+    right: -130px;
+    bottom: -120px;
+    box-shadow:
+        0 0 0 35px rgba(255,152,0,.025),
+        0 0 0 70px rgba(255,152,0,.018);
 }
 
-.badge{
-    position:relative;
-    z-index:2;
-    width:max-content;
-    padding:7px 11px;
-    border:1px solid rgba(255,152,0,.25);
-    background:rgba(255,152,0,.07);
-    color:#ffb74d;
-    border-radius:999px;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1.3px;
-    text-transform:uppercase;
+.badge {
+    position: relative;
+    z-index: 2;
+    width: max-content;
+    padding: 7px 11px;
+    border: 1px solid rgba(255,152,0,.25);
+    background: rgba(255,152,0,.07);
+    color: #ffb74d;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
 }
 
-.brand-copy{
-    position:relative;
-    z-index:2;
+/* Reduce space below Secure Access */
+.brand-copy {
+    position: relative;
+    z-index: 2;
+    margin-top: 75px;
+}
+.brand-copy h1 {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.04;
+    letter-spacing: -2px;
+    margin-bottom: 14px;
 }
 
-.brand-copy h1{
-    font-size:clamp(32px,4vw,52px);
-    line-height:1.04;
-    letter-spacing:-2px;
-    margin-bottom:18px;
+.brand-copy h1 span {
+    color: var(--orange);
 }
 
-.brand-copy h1 span{color:var(--orange)}
-
-.brand-copy p{
-    max-width:370px;
-    color:#969696;
-    font-size:14px;
-    line-height:1.8;
+.brand-copy p {
+    max-width: 370px;
+    color: #969696;
+    font-size: 14px;
+    line-height: 1.7;
 }
 
-.features{
-    position:relative;
-    z-index:2;
-    display:grid;
-    gap:12px;
+.features {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 12px;
+    margin-top: 80px;
 }
 
-.feature{
-    display:flex;
-    align-items:center;
-    gap:11px;
-    color:#c8c8c8;
-    font-size:12px;
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #c8c8c8;
+    font-size: 12px;
 }
 
-.feature i{
-    width:28px;
-    height:28px;
-    display:grid;
-    place-items:center;
-    border-radius:8px;
-    color:var(--orange);
-    background:rgba(255,152,0,.08);
-    border:1px solid rgba(255,152,0,.13);
+.feature i {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    color: var(--orange);
+    background: rgba(255,152,0,.08);
+    border: 1px solid rgba(255,152,0,.13);
 }
 
 /* Auth panel */
@@ -610,6 +615,8 @@ body{
     .heading h2{font-size:26px}
     .requirements{grid-template-columns:1fr}
 }
+
+
 </style>
 </head>
 

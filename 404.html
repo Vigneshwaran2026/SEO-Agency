@@ -141,6 +141,86 @@ h1{font-size:24px;margin-bottom:10px}
     }
 }
 
+/* 404 Page - Increase Overall Section Size */
+.error-card {
+    width: min(760px, 100%);
+    padding: 65px 55px;
+    border-radius: 26px;
+}
+
+.brand {
+    margin-bottom: 35px;
+}
+
+.brand-logo {
+    width: 175px;
+    max-height: 65px;
+}
+
+.error-number {
+    font-size: clamp(110px, 20vw, 175px);
+    letter-spacing: -9px;
+    margin-bottom: 28px;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 14px;
+}
+
+.description {
+    max-width: 520px;
+    margin: 0 auto 34px;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.back-btn {
+    padding: 15px 26px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+.button-group {
+    gap: 12px;
+}
+
+.footer-text {
+    margin-top: 30px;
+    font-size: 10px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .error-card {
+        width: 100%;
+        padding: 48px 25px;
+        border-radius: 22px;
+    }
+
+    .brand-logo {
+        width: 160px;
+    }
+
+    .error-number {
+        font-size: 105px;
+        letter-spacing: -6px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .description {
+        font-size: 12px;
+        margin-bottom: 28px;
+    }
+}
+
+    html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
 </style>
 </head>
 
